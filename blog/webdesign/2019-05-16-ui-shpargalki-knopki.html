@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<base href="/">
+
+	<title>UI шпаргалки: кнопки | CodehaX - Новости из мира IT</title>
+	<meta name="description" content="В этой шпаргалке мы рассмотрим различные типы кнопок, состояний и взаимодействий. Для этой цели мы проигнорируем переключатели, вкладки, флажки и другие типы кнопок">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="img/webdesign/ui-shpargalki-knopki/1og.jpg">
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://codehax.ru/blog/webdesign/2019-05-16-ui-shpargalki-knopki.html" />
+	<link rel="icon" href="img/favicon.png">
+	<!-- Template Basic Images End -->
+
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#202225">
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href="/css/styles.min.css">
+
+</head>
+
+<body>
+
+
+<header class="top-line navbar is-flex-touch">
+	<div class="navbar-start">
+		<a href="/" class="logo">code<span>haX</span></a>
+	</div>
+	<div class="navbar-end">
+		<nav class="main-navigation" role="navigation" aria-label="main navigation">
+<a href="/blog/coding" class="navbar-item">Кодинг</a>
+<a href="/blog/webdesign" class="navbar-item">Веб-Дизайн</a>
+<a href="/blog/graphic" class="navbar-item">Графика</a>
+<a href="/blog/technology" class="navbar-item">Технологии</a>
+<a href="/blog/cms" class="navbar-item">CMS</a>
+<a href="/about.html" class="navbar-item">О сайте</a>
+
+		</nav>
+		<div class="search-wrap">
+			<div class="search" title="Поиск по сайту...">
+				<span class="icon">
+					<i class="fas fa-search"></i>
+				</span>
+			</div>
+			<div class="search-field">
+				<form action="/search.html" id="cse-search-box">
+					<input type="hidden" name="cx" value="partner-pub-xxx:xxx" />
+					<input type="hidden" name="cof" value="FORID:10" />
+					<input type="hidden" name="ie" value="UTF-8" />
+					<input type="text" class="input" name="q" placeholder="Поиск по сайту..." />
+				</form>
+			</div>
+		</div><!-- /.search-wrap -->
+		<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
+		</a>
+	</div><!-- /.navbar-menu -->
+</header>
+
+<nav class="mobile-menu main-navigation" role="navigation" aria-label="main navigation">
+<a href="/blog/coding" class="navbar-item">Кодинг</a>
+<a href="/blog/webdesign" class="navbar-item">Веб-Дизайн</a>
+<a href="/blog/graphic" class="navbar-item">Графика</a>
+<a href="/blog/technology" class="navbar-item">Технологии</a>
+<a href="/blog/cms" class="navbar-item">CMS</a>
+<a href="/about.html" class="navbar-item">О сайте</a>
+
+</nav>
+
+
+<main>
+
+	<div class="page-header overlay" style="background-image: url(img/webdesign/ui-shpargalki-knopki/1.jpg)">
+		<div class="page-header-content">
+			<div class="container">
+				<div class="columns">
+					<div class="column is-9-widescreen is-8-tablet">
+						<div class="page-header-meta">
+
+							<a href="/blog/webdesign" class="page-category-link">Веб-дизайн</a>
+							<h1 class="title">UI шпаргалки: кнопки</h1>
+
+							<div class="post-meta">
+								<span class="post-date">16.05.2019</span>
+								<span class="icon"><i class="fas fa-comments"></i></span>
+								<a href="/blog/webdesign/2019-05-16-ui-shpargalki-knopki.html#disqus_thread" class="post-comments" title="Количество комментариев"></a>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="article-content">
+		<div class="container">
+			<div class="columns">
+				<div class="column is-8-desktop">
+					<article class="main-article">
+
+						<nav class="breadcrumb" aria-label="breadcrumbs">
+							<ul>
+								<li><a href="/">Главная</a></li>
+								<li><a href="blog/webdesign">Веб-дизайн</a></li>
+								<li class="is-active"><a href="#" aria-current="page">UI шпаргалки: кнопки</a></li>
+							</ul>
+						</nav>
+
+						<div class="article-body">
+
+
+<p>Мой любимый элемент дизайна — кнопки. Более того, я [вставьте нецензурное слово ваш выбор] обожаю кнопки. В этой шпаргалке мы рассмотрим различные типы кнопок, состояний и взаимодействий. Для этой цели мы проигнорируем переключатели, вкладки, флажки и другие типы кнопок — мы просто будем рассматривать &laquo;нормальные&raquo; кнопки.</p>
+
+<p>Что мы рассмотрим в этом шпаргалке:</p>
+
+<ol>
+	<li>Действия кнопок</li>
+	<li>Общие стили кнопок</li>
+	<li>Цвета кнопок и стиль</li>
+	<li>Состояния кнопок и обратная связь</li>
+	<li>Маркировка кнопок</li>
+	<li>Сенсорные цели</li>
+	<li>Положение кнопки</li>
+	<li>Зал славы кнопок</li>
+	<li>Заключительные мысли</li>
+</ol>
+
+<h3>1. Действия кнопок</h3>
+
+<p>В этом разделе мы рассмотрим иерархию кнопок и язык, на котором они общаются. Действия кнопок определяются не тем, как они выглядят (хотя пользователи должны знать, что кнопка означает по своему виду), а скорее тем, как они используются.</p>
+
+<h4>1. Призыв к действию (CTA / C2A)</h4>
+
+<p>Кнопка призыва к действию, в зависимости от ситуации, обычно побуждает пользователей залогиниться / зарегистрироваться / купить / и т.д. Кнопки CTA следует использовать там, где платформа хочет настоятельно предложить что-то, что должен сделать пользователь.</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/2.png" alt="Кнопка призыва к действию">
+	<figcaption>Кнопка призыва к действию</figcaption>
+</figure>
+
+<p>Для кнопок CTA мне нравится использовать округлые кнопки, так как они бросаются в глаза и привлекают внимание.</p>
+
+<h4>2. Основное действие</h4>
+
+<p>Хотя кнопка CTA и основная кнопка могут выглядеть одинаково, я бы хотел разделить их. В то время как кнопки CTA — то, что интерфейс хотел бы, чтобы вы делали, основные кнопки должны быть сильным визуальным индикатором, чтобы помочь пользователю завершить свое путешествие. Основные кнопки следует использовать в ситуациях, когда пользователь может захотеть перейти &laquo;дальше&raquo;, &laquo;завершить&raquo;, &laquo;в начало&raquo; и т.д.</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/3.png" alt="Основная кнопка действия">
+	<figcaption>Основная кнопка действия</figcaption>
+</figure>
+
+<div class="ad-article">
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-8291473972193166"
+     data-ad-slot="9506016869"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+
+<h4>3. Вторичное действие</h4>
+
+<p>Вторичные кнопки — это кнопка &laquo;назад&raquo; для основной кнопки &laquo;далее&raquo; или &laquo;отмена&raquo; для кнопки &laquo;Отправить&raquo;. Вторичные кнопки — это альтернатива, которую мы даем пользователям для основного действия.</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/4.png" alt="Вторичные кнопки">
+	<figcaption>Два варианта вторичных действий рядом с первичными.</figcaption>
+</figure>
+
+<p>Я (и остальная часть Интернета) склонен использовать контурные кнопки или текстовые ссылки в качестве дополнительных кнопок.</p>
+
+<h4>4. Третичное действие</h4>
+
+<p>Третичные кнопки обычно используются для разнообразных действий: действие важно, но может не соответствовать тому, что пользователь хочет сделать прямо сейчас. Это такие вещи, как &laquo;добавить друга&raquo;, &laquo;добавить новое&raquo;, &laquo;изменить&raquo; или &laquo;удалить&raquo;, при условии, что они не являются основным действием.</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/5.png" alt="Третичные кнопки">
+	<figcaption>Третичные действия в разных формах.</figcaption>
+</figure>
+
+<p>Вообще говоря, для этого нужно использовать меньшие или менее заметные стили кнопок.</p>
+
+<h3>2. Общие стили кнопок</h3>
+
+<p>В этом разделе мы рассмотрим общие стили кнопок. Стиль — это просто эстетика кнопки, а не то, как ее следует использовать.</p>
+
+<h4>Сплошные кнопки</h4>
+
+<p>Сплошные кнопки именно такие, какими кажутся — это кнопки со сплошной заливкой. Готово.</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/6.png" alt="Сплошная кнопка">
+	<figcaption>Сплошная кнопка.</figcaption>
+</figure>
+
+<h4>Контурные и призрачные кнопки</h4>
+
+<p>Контурные кнопки тоже на вид такие же, как и на слух: кнопка без заливки — просто контур. Несмотря на то, что они часто используются взаимозаменяемо, я предпочитаю думать, что контурные кнопки имеют светлый цвет (с темным контуром и текстом), а призрачные — темного цвета (со светлым контуром и текстом).</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/7.png" alt="Контурная и призрачная кнопки">
+	<figcaption>Контурная кнопка (слева) и призрачная кнопка (справа).</figcaption>
+</figure>
+
+<div class="ad-article">
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-8291473972193166"
+     data-ad-slot="9506016869"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+
+<h4>Округлые кнопки</h4>
+
+<p>Округлые кнопки — это кнопки, края которых настроены на максимальный скругленный радиус границы.</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/8.png" alt="Округлая кнопка">
+	<figcaption>Округлая кнопка.</figcaption>
+</figure>
+
+<p><strong>Примечание:</strong> закругленные кнопки выглядят ужасно друг с другом. Каждый раз, когда вы складываете закругленные кнопки, UI дизайнер плачет.</p>
+
+<p>Если вы хотите узнать больше об округлых кнопках, я настоятельно рекомендую <a href="https://uxdesign.cc/make-sense-of-rounded-corners-on-buttons-dfc8e13ea7f7">эту</a> историю о закругленных кнопках от Шана Шена.</p>
+
+<h4>FAB (Плавающая кнопка действия)</h4>
+
+<p>Плавающие кнопки действий — это продуманный
+шаблон проектирования,  популярный в Google Material Design. Хотя они могут выглядеть как кнопка со значком, они фактически используются для основного действия на экране.
+</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/9.png" alt="Кнопка FAB.">
+	<figcaption>Кнопка FAB.</figcaption>
+</figure>
+
+<p>Если вы хотите узнать больше о FAB, я рекомендую посмотреть <a href="https://material.io/design/components/buttons-floating-action-button.html#">&laquo;Кнопки: плавающая кнопка действия&raquo;</a> на сайте Material Design.</p>
+
+<h4>Текстовая ссылка</h4>
+
+<p>Текстовые ссылки — это очень простой тип кнопок. Есть несколько способов показать, что что-то является ссылкой. Это может быть цвет, или подчеркивание, или положение ссылки, или даже просто сам текст (например, &laquo;Читать дальше&raquo;).</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/10.png" alt="Текстовые ссылки">
+	<figcaption>Текстовые ссылки оформленные по-разному.</figcaption>
+</figure>
+
+<p>Когда дело доходит до цвета, большинство сайтов используют синий, так как он наиболее всего определяется как ссылка. И почему типичные текстовые ссылки &laquo;синие&raquo;, спросите вы? Все начинается с сэра Тима Бернерса-Ли, изобретателя интернета (примечание: представьте себе &laquo;изобрел интернет&raquo; в вашем резюме). Хотя кажется, он не думал о доступности, когда выбирал цвет, но синий хорош тем, что даже люди с дальтонизмом все еще могут его видеть.</p>
+
+<h4>Кнопка иконки с лейблом</h4>
+
+<p>Популярность кнопок со значками возросла, но некоторые кнопки все еще нуждаются в ярлыке, чтобы позаботиться о правильном взаимодействии кнопки.</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/11.png" alt="Кнопка иконки с лейблом">
+	<figcaption>Кнопка иконки с лейблом.</figcaption>
+</figure>
+
+<p>Самое сложное в работе с иконками и надписями — выяснить, насколько велика иконка по отношению к шрифту. Вариант 1: размер иконки соответствует высоте заглавной букве шрифта. Вариант 2: Вы делаете размер иконки намного больше, чем высота строки. Предостережение: если значок только немного больше высоты заглавной буквы, он будет выглядеть несбалансированным или как оплошность. Он должен быть примерно одинаковый с высотой заглавной буквы или намного больше — избегайте промежуточных значений.</p>
+
+<div class="ad-article">
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-8291473972193166"
+     data-ad-slot="9506016869"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+
+<h4>Кнопка со значком</h4>
+
+<p>У кнопки со значком нет лейбла, есть только значок. Поскольку у них нет лейбла, они экономят много места в интерфейсе. Кнопки иконок также позволяют размещать их рядом друг с другом в небольшом пространстве.</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/12.png" alt="Кнопки иконок с разными стилями">
+	<figcaption>Кнопки иконок с разными стилями.</figcaption>
+</figure>
+
+<p><strong>Предупреждение:</strong> если вы разрабатываете продукты для людей с низкой компьютерной грамотностью, я бы всегда рекомендовал использовать кнопку с надписью — особенно для более абстрактных значений.</p>
+
+<h4>Иконка с текстовой ссылкой</h4>
+
+<p>Некоторые текстовые ссылки могут иметь значок. Они обычно не помещаются в тексте.</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/13.png" alt="Иконки с текстовой ссылкой">
+	<figcaption>Различные иконки с текстовой ссылкой.</figcaption>
+</figure>
+
+<h3>3. Цвет и стиль кнопок</h3>
+
+<p>При разработке кнопок необходимо учитывать несколько аспектов.</p>
+
+<h4>Цвет</h4>
+
+<p>При разработке продукта вы всегда должны думать о людях с нарушениями. Чтобы убедиться, что ваши цвета доступны каждому, вы можете использовать онлайн инструмент проверки контрастности. <a href="http://accessible-colors.com/" target="_blank">Этот</a> использую я.</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/14.png" alt="Кнопки с разными цветами">
+	<figcaption>Кнопки с разными цветами.</figcaption>
+</figure>
+
+<p>Кроме того, подумайте о языке цвета при выборе цветовой палитры. Красная кнопка, в отличие от зеленой кнопки, может передавать другое сообщение в контексте.</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/15.png" alt="Кнопки &laquo;Удалить&raquo;, &laquo;Просмотреть предупреждения&raquo;, &laquo;Сохранить&raquo; и &laquo;Еще&raquo;">
+	<figcaption>Кнопки &laquo;Удалить&raquo;, &laquo;Просмотреть предупреждения&raquo;, &laquo;Сохранить&raquo; и &laquo;Еще&raquo;.</figcaption>
+</figure>
+
+<p>Например, зеленая кнопка &laquo;удалить&raquo; может вызвать путаницу, как и красная кнопка &laquo;сохранить&raquo; (если это не Pinterest).</p>
+
+<h4>Радиус границы</h4>
+
+<p>Радиус границы — это то, что придает кнопкам их индивидуальность (на мой взгляд). Кнопки с острыми краями выглядят более серьезными, а кнопки с закругленным радиусом выглядят более игриво.</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/16.png" alt="Кнопки с различными настройками радиуса границы">
+	<figcaption>Кнопки с различными настройками радиуса границы.</figcaption>
+</figure>
+
+<p><strong>Примечание:</strong> как упоминалось ранее, закругленные кнопки выглядят плохо друг рядом с другом.</p>
+
+<div class="ad-article">
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-8291473972193166"
+     data-ad-slot="9506016869"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+
+<h4>3. Тень</h4>
+
+<p>Тень на кнопке создает ощущение, будто кнопка выходит за пределы страницы, и, естественно, привлекает к ней внимание. Тени также могут использоваться для обозначения различных состояний. <a href="https://material.io/design/environment/elevation.html#depicting-elevation" target="_blank">Material Design</a> делает это особенно хорошо, делая кнопку &laquo;ближе&raquo; к вам при наведении курсора.</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/17.png" alt="Кнопки с различными настройками тени">
+	<figcaption>Кнопки с различными настройками тени.</figcaption>
+</figure>
+
+<h4>4. Стиль лейбла</h4>
+
+<p>Стиль лейбла зависит от шрифта и от того, насколько легко его читать. При выборе шрифта убедитесь, что он разборчивый.</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/18.png" alt="Кнопки с разными стилями надписей">
+	<figcaption>Кнопки с разными стилями надписей.</figcaption>
+</figure>
+
+<p>Вот несколько простых способов сделать шрифт читабельным:</p>
+
+<ol>
+	<li>Выберите sentence case (прим. Заглавная только первая буква в предложении) или title case (прим. В каждом слове первая буква заглавная) вместо верхнего регистра. (При этом в Material Design используются кнопки с заглавными буквами.)</li>
+	<li>Убедитесь, что цвет лейбла выделяется на фоне кнопки. Это можно проверить, используя <a href="http://accessible-colors.com/" target="_blank">http://accessible-colors.com/</a>. Убедитесь, что ваши цвета всегда соответствуют требованиям AAA.</li>
+	<li>При выборе шрифта убедитесь, что он разборчивый, достаточно большой, чтобы его можно было увидеть, и средней насыщенности.</li>
+</ol>
+
+<h4>5. Вертикальный отступ</h4>
+
+<p>Размер кнопки играет большую роль в доступности вашего интерфейса. Большинство неопытных дизайнеров скажут что-то вроде &laquo;Кнопки должны иметь высоту 36 пикселей&raquo;. Это не лучший подход, особенно если вы разрабатываете дизайн для веб-сайтов. Вы должны всегда брать высоту строки используемого вами шрифта и добавлять к нему единицу измерения. Например: &laquo;Высота строки лейбла моей кнопки — 20 пикселей и отступ по вертикали 8 пикселей&raquo;.</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/19.png" alt="Кнопки с разным вертикальным отступом">
+	<figcaption>Кнопки с разным вертикальным отступом.</figcaption>
+</figure>
+
+<p>Вы спросите: &laquo;Почему?&raquo;. На это есть две причины. 1) Люди с нарушениями зрения могут увеличивать шрифт в своем браузере, и, поэтому, им нужно, чтобы высота кнопки не обрезала размер шрифта. 2) Так разработчики создают кнопки — они добавляют отступы к своим контейнерам div, а не высоту.</p>
+
+<p>Есть 2 способа подойти к горизонтальному отступу.</p>
+
+<div class="ad-article">
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-8291473972193166"
+     data-ad-slot="9506016869"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+
+<p><strong>Первый вариант:<br></strong>
+Выровняйте ширину кнопки по сетке. Это хороший способ сохранить все ваши кнопки одинаковой длины. Однако, это ограничивает количество слов, которые вы можете использовать.</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/20.png" alt="Кнопки, ширина которых определяется сеткой">
+	<figcaption>Кнопки, ширина которых определяется сеткой.</figcaption>
+</figure>
+
+<p><strong>Второй вариант:<br></strong>
+Фиксированные отступы по бокам. Я также обычно добавляю условия для минимальной ширины кнопки, для того чтобы избежать слишком маленьких кнопок. Хотя это допускает случай, когда вы можете иметь различное количество текста, это может сделать ваши кнопки очень неровными.</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/21.png" alt="Кнопки, ширина которых определяется отступом и длиной лейбла">
+	<figcaption>Кнопки, ширина которых определяется отступом и длиной лейбла.</figcaption>
+</figure>
+
+<h3>4. Состояния кнопок и обратная связь</h3>
+
+<p>Состояния кнопок позволяют пользователю узнать, могут ли они кликнуть или уже успешно кликнули кнопку. Также следует помнить, что у кнопки могут быть перекрывающиеся состояния. Например, у нее могут быть состояния &laquo;активна&raquo; и &laquo;наведена&raquo; одновременно.</p>
+
+<h4>1. Активное и отключенное состояние</h4>
+
+<p>Активное состояние — это когда кнопка &laquo;кликнута&raquo; / &laquo;тапнута&raquo;. Хотя это может показаться очевидным, важно отметить, что кнопка может быть отключена, если пользователь не выполнил необходимые шаги. Например, если пользователь не ввел свое имя и адрес электронной почты, он не сможет отправить свои данные.</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/22.png" alt="Активная и отключенная кнопка">
+	<figcaption>Активная и отключенная кнопка.</figcaption>
+</figure>
+
+<h4>2. Наведение и без наведения (указатель находится над кнопкой и не над кнопкой)</h4>
+
+<p>На десктопах кнопка должна иметь разные состояния, чтобы пользователь знал, что на нее можно нажать. А также, если пользователь видит анимацию, это может побудить пользователей кликать. Обычно состояние &laquo;наведения&raquo; будет заменено на &laquo;без наведения&raquo;, но не обязательно. Вы можете указать, что ранее находились над кнопкой.</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/23.gif" alt="Кнопка, демонстрирующая наведение курсора">
+	<figcaption>Кнопка, демонстрирующая наведение курсора.</figcaption>
+</figure>
+
+<p>Совет, не будь Нубом: состояния наведения никогда не будут видны на планшете и мобильном телефоне, потому что ваши пальцы не могут &laquo;зависать&raquo;. Поэтому, если вы разрабатываете приложение, не беспокойтесь об этом состоянии.</p>
+
+<h4>3. Фокус</h4>
+
+<p>Состояние фокуса может быть немного запутанным для осознания. (По крайней мере так было для меня.) Так что самый простой способ объяснить его — это показать на практике, а затем работать в обратном направлении.</p>
+
+<p>Если у вашего пользователя слабая мелкая моторика, возможно, ему придется использовать &laquo;tab&raquo; навигацию. Пользователь будет нажимать &laquo;tab&raquo;, чтобы перемещаться по сайту от одной навигационной ссылки к другой. Это означает, что для кнопки нужно состояние &laquo;фокус&raquo;, чтобы показать, что она &laquo;кликабельна, но еще не нажата&raquo;.</p>
+
+<p>Другой пример состояния фокуса — когда вы нажимаете на поле ввода. Если бы вы начали печатать, заполнилось бы только это поле ввода, а не другое.</p>
+
+<p>Состояние фокуса по умолчанию — это синее свечение, которое вы, несомненно, видели во время своих интернет-исследований. К счастью, мы живем во время, когда мы можем создавать собственные состояния кнопок. Большинство дизайнеров, похоже, используют одни и те же визуальные подсказки для состояний наведения и фокуса.</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/24.png" alt="Два разных примера состояния &laquo;В фокусе&raquo;">
+	<figcaption>Два разных примера состояния &laquo;В фокусе&raquo;.</figcaption>
+</figure>
+
+<h4>4. Нажатие</h4>
+
+<p>Нажатое состояние — это состояние, когда пользовательский курсор или палец &laquo;удерживают&raquo; кнопку. Когда пользователь &laquo;отпускает&raquo; свой палец или курсор над кнопкой, кнопка регистрируется как &laquo;нажатая&raquo;.</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/25.gif" alt="Кнопка, демонстрирующая &laquo;нажатие&raquo;">
+	<figcaption>Кнопка, демонстрирующая &laquo;нажатие&raquo;.</figcaption>
+</figure>
+
+<h4>5. Нажатая</h4>
+
+<p>Кнопки нуждаются в состоянии &laquo;нажата&raquo;, чтобы указать пользователю, что они были нажаты.</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/26.gif" alt="Кнопка, демонстрирующая состояние &laquo;нажата&raquo;">
+	<figcaption>Кнопка, демонстрирующая состояние &laquo;нажата&raquo;.</figcaption>
+</figure>
+
+<h3>5. Маркировка кнопок</h3>
+
+<p>Хитрость для маркировки кнопок заключается в согласованности. И если вы лучше, чем я, то это очень помогает определиться с вашими правилами на раннем этапе проекта, чтобы избежать необходимости кропотливо менять все кнопки позже.</p>
+
+<h4>1. Использование глаголов</h4>
+
+<p>Большинство кнопок содержат глаголы для указания того, что кнопка будет делать, например, &laquo;Сохранить&raquo;, &laquo;Опубликовать&raquo;, &laquo;Редактировать&raquo;. Хотя &laquo;Назад&raquo; и &laquo;Далее&raquo; не являются глаголами, в контексте интерфейса они работают таким же образом. Мне нравится сохранять структуру &laquo;глагол&raquo; + &laquo;существительное&raquo; при написании меток кнопок — это делает действие более предписывающим, например, &laquo;Сохранить сообщение&raquo;, &laquo;Следующий шаг&raquo; и т.д., в отличие от &laquo;Сохранить&raquo;, &laquo;Далее&raquo;, но выбор за вами и вашими пользователями.</p>
+
+<h4>2. Регистр текста</h4>
+
+<p>Вы также должны решить, какой регистр шрифта использовать. Вот некоторые общие рекомендации, которые я использую:</p>
+
+<ol>
+	<li><strong>Все заглавные буквы</strong>, например &laquo;СЛЕДУЮЩИЙ РАЗДЕЛ&raquo;. Я использую их для более &laquo;профессиональных&raquo; платформ. Material Design использует кнопки со всеми заглавными буквами.</li>
+	<li><strong>Title case</strong>, например &laquo;Следующий Раздел&raquo;. Я стараюсь не использовать title case, так как он не так легко читается, как sentence case. Что касается тона, я бы предположил, что он находится на полпути между &laquo;профессиональным&raquo; и &laquo;разговорным&raquo;.</li>
+	<li><strong>Sentence case</strong>, например, &laquo;Следующий раздел&raquo;. Я использую sentence case для более &laquo;дружественных&raquo; или &laquo;разговорных&raquo; платформ. Примечание: Да, это sentence case, и да, здесь должна быть быть точка — но ради любви ко всему хорошему и продуманному, пожалуйста, не ставьте точку.</li>
+	<li><strong>Нижний регистр</strong>, например &laquo;следующий раздел&raquo;. Как и в случае с заглавными буквами, я не склонен часто использовать ярлыки кнопок в нижнем регистре. Я полагаю, что это самый &laquo;несерьезный&raquo; регистр.</li>
+</ol>
+
+<div class="ad-article">
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-8291473972193166"
+     data-ad-slot="9506016869"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+
+<h4>3. Согласованность</h4>
+
+<p>При написании кнопок убедитесь, что вы сохраняете согласованность. Вот несколько рекомендаций, которые я хотел бы установить в начале проекта:</p>
+
+<ol>
+	<li><strong>Выберите количество слов:</strong> одно, два или более слов на кнопку</li>
+	<li><strong>Выберите регистр:</strong> Sentence case, или title case, или заглавные буквы, или строчные буквы</li>
+	<li><strong>Структура лейбла:</strong> например, &laquo;Глагол&raquo; + &laquo;существительное&raquo; или &laquo;глагол&raquo; или &laquo;глагол&raquo; + &laquo;существительное&raquo; и т.д.</li>
+</ol>
+
+<h3>6. Сенсорные цели</h3>
+
+<h4>Размер кнопки для десктопа (клик)</h4>
+
+<p>Поскольку курсор на рабочем столе меньше, чем палец на сенсорном экране, вы можете сделать кнопки намного меньше. Но вы бы хотели?</p>
+
+<p>Пользователю никогда не придется искать кнопку, поэтому вы должны определить правильную иерархию и навигацию для вашего интерфейса.</p>
+
+<h4>Размер кнопки для сенсорного экрана (тап)</h4>
+
+<p>Исследование <a href="http://touchlab.mit.edu/publications/2003_009.pdf" target="_blank">MIT Touch Lab</a> показало, что часть пальца, используемая для прикосновения к экрану, составляет 8–10 мм, поэтому минимальный целевой размер должен быть 10 мм или более, если вы не хотите, чтобы пользователи допускали ошибок. Как упоминалось ранее — я обеими руками за большие кнопки.</p>
+
+<p>Итак, какого же размера должны быть ваши кнопки? Вот что говорят эксперты:</p>
+
+<p><strong>Material Design</strong> предполагает, что цель касания должна быть 48dp x 48dp с расстоянием 8dp между различными точками касания. <a href="https://support.google.com/accessibility/android/answer/7101858?hl=ru" target="_blank">Источник</a></p>
+
+<p>Хотя я не могу найти никакой документации по целевому размеру системы <strong>iOS</strong>, общее понимание состоит в том, что ее минимальный целевой размер составляет 44 х 44 точки.</p>
+
+<h3>7. Положение кнопки</h3>
+
+<h4>Широкая дискуссия по поводу позиции основной кнопки</h4>
+
+<p>Если бы вы расположили 2 кнопки рядом, на какой стороне должна располагаться основная кнопка?</p>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/27.png" alt="Две разные позиции для первичного и вторичного действий">
+	<figcaption>Две разные позиции для первичного и вторичного действий.</figcaption>
+</figure>
+
+<p>Вариант A показывает основную кнопку слева. Аргумент здесь заключается в том, что это, скорее всего, то, что пользователь хочет увидеть первым, поэтому и покажите это сначала.</p>
+
+<p>Опция B показывает основную кнопку справа. Аргумент здесь заключается в том, что мы хотим, чтобы пользователь сначала увидел дополнительную кнопку, чтобы он знал свои возможности, прежде чем продолжить. Элементы, расположенные справа, также указывают на продолжение.</p>
+
+<h3>8. Зал славы кнопок</h3>
+
+<p>Этот раздел просто для того, чтобы отметить некоторые крутые концепции и принципы проектирования. Мне нравятся кнопки Material Design System  только потому, что их принципы действительно хорошо продуманы.</p>
+
+<h3>Кнопка Material Design System</h3>
+
+<figure>
+	<img src="img/webdesign/ui-shpargalki-knopki/28.png" alt="Кнопка Material Design">
+	<figcaption>Кнопка Material Design.</figcaption>
+</figure>
+
+<p>Ни один разговор о кнопках не будет полным без упоминания Material Design System и их работы над кнопками и того, как они взаимодействуют с другими компонентами в системе. Мне частично нравится, как кнопки взаимодействуют с пользователем на сенсорных устройствах.</p>
+
+<p>Проверьте их раздел о кнопках здесь:</p>
+<a href="https://material.io/design/components/buttons.html#anatomy" target="_blank">https://material.io/design/components/buttons.html#anatomy</a>
+
+<p>Я также фанат их работы над плавающими кнопками действий. Посмотрите это здесь:</p>
+<a href="https://material.io/design/components/buttons-floating-action-button.html" target="_blank">https://material.io/design/components/buttons-floating-action-button.html</a>
+
+<h3>9. Заключительные мысли</h3>
+
+<p>Вы не можете создавать интерфейсы без кнопок; они заслуживают большего внимания, чем они часто получают (бедняжки). Потратьте время, чтобы понять, как они работают и как их использовать, чтобы обеспечить максимальный комфорт для ваших пользователей.</p>
+
+<p>Если у вас есть какие-либо мысли или хитрости, когда дело доходит до стиля кнопок, пожалуйста, дайте мне знать!</p>
+
+<p class="source">Перевод статьи <a href="https://uxdesign.cc/ui-cheat-sheets-buttons-7329ed9d6112" target="_blank">&laquo;UI cheat sheets: buttons&raquo;</a></p>
+
+
+						</div>
+
+						<div class="likely-on-page">
+							<div class="likely" data-url="https://codehax.ru/blog/webdesign/2019-05-16-ui-shpargalki-knopki.html" data-media="webdesign/ui-shpargalki-knopki/1.jpg" data-title="UI шпаргалки: кнопки">
+								<div class="vkontakte" title="Поделиться Вконтакте">Вконтакте</div>
+								<div class="facebook" title="Поделиться в Facebook">Facebook</div>
+								<div class="twitter" title="Поделиться в Twitter">Twitter</div>
+								<div class="odnoklassniki" title="Поделиться в ОК">Однокласснки</div>
+							</div>
+						</div>
+
+						<div class="ad article-top-ad">
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-8291473972193166"
+     data-ad-slot="5847286532"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+						</div>
+
+						<div class="read-more">
+							<div class="read-more-header">Читать еще:</div>
+							<ul>
+								
+								
+								
+									
+									<li><a href="/blog/webdesign/2019-07-01-7-hudshih-oshibok-ux-ogranichivayushhih-vash-rost.html">7 худших ошибок UX, ограничивающих ваш рост</a></li>
+									
+								
+									
+									<li><a href="/blog/webdesign/2019-06-05-10-trendov-veb-dizajna-kotorye-uzhe-zakonchilis.html">10 трендов веб-дизайна, которые уже закончились</a></li>
+									
+								
+									
+								
+									
+									<li><a href="/blog/webdesign/2019-05-11-ux-of-the-hamburger-menu.html">UX Гамбургер Меню: слишком вездесущ, чтобы потерпеть неудачу?</a></li>
+									
+								
+									
+									<li><a href="/blog/webdesign/2019-04-25-rukovodstvo-po-optimizacii-veb-proizvoditelnosti.html">Руководство по оптимизации веб-производительности</a></li>
+									
+								
+							</ul>
+						</div>
+
+						<div class="disqus-placeholder">Loading comments...</div>
+						<div class="comments">
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://codehax.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+						</div>
+
+					</article>
+				</div>
+				<div class="column is-3-widescreen is-4-tablet">
+<aside class="main-aside">
+
+	<div class="aside-box">
+<ins class="adsbygoogle side_ad"
+     style="display:inline-block"
+     data-ad-client="ca-pub-8291473972193166"
+     data-ad-slot="5932591608"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+	</div>
+
+	<div class="aside-box">
+<section class="latest-box">
+
+	<div class="lb-header">Последние статьи:</div>
+
+	<div class="lb-list">
+
+		<div class="lb-item">
+			<div class="lb-thumb">
+				
+				<a class="lb-item-header" href="/blog/coding/2020-01-09-32-soveta-dlya-kazhdogo-veb-razrabotchika-v-2020.html"><img src="img/coding/32-soveta-dlya-kazhdogo-veb-razrabotchika-v-2020/1lp.jpg" alt="32 совета для каждого веб-разработчика в 2020 году"></a>
+				
+			</div>
+			<div class="lb-body">
+				<a href="blog/coding/" class="lb-catname">Кодинг</a>
+				
+				<a class="lb-item-header" href="/blog/coding/2020-01-09-32-soveta-dlya-kazhdogo-veb-razrabotchika-v-2020.html">32 совета для каждого веб-разработчика в 2020 году</a>
+				
+			</div>
+		</div>
+
+		<div class="lb-item">
+			<div class="lb-thumb">
+				
+				<a class="lb-item-header" href="/blog/webdesign/2019-07-01-7-hudshih-oshibok-ux-ogranichivayushhih-vash-rost.html"><img src="img/webdesign/7-hudshih-oshibok-ux-ogranichivayushhih-vash-rost/1lp.jpg" alt="7 худших ошибок UX, ограничивающих ваш рост"></a>
+				
+			</div>
+			<div class="lb-body">
+				<a href="blog/webdesign/" class="lb-catname">Веб-дизайн</a>
+				
+				<a class="lb-item-header" href="/blog/webdesign/2019-07-01-7-hudshih-oshibok-ux-ogranichivayushhih-vash-rost.html">7 худших ошибок UX, ограничивающих ваш рост</a>
+				
+			</div>
+		</div>
+
+		<div class="lb-item">
+			<div class="lb-thumb">
+				
+				<a class="lb-item-header" href="/blog/graphic/2019-12-05-12-besplatnyh-novogodnih-shriftov-dlya-rasprostraneniya-novogodnego-duha.html"><img src="img/graphic/12-besplatnyh-novogodnih-shriftov-dlya-rasprostraneniya-novogodnego-duha/1lp.jpg" alt="12 бесплатных Новогодних шрифтов для распространения Новогоднего духа"></a>
+				
+			</div>
+			<div class="lb-body">
+				<a href="blog/graphic/" class="lb-catname">Графика</a>
+				
+				<a class="lb-item-header" href="/blog/graphic/2019-12-05-12-besplatnyh-novogodnih-shriftov-dlya-rasprostraneniya-novogodnego-duha.html">12 бесплатных Новогодних шрифтов для распространения Новогоднего духа</a>
+				
+			</div>
+		</div>
+
+		<div class="lb-item">
+			<div class="lb-thumb">
+				
+				<a class="lb-item-header" href="/blog/technology/2019-11-07-firefox-budet-blokirovat-uvedomleniya-v-2020-godu.html"><img src="img/technology/firefox-budet-blokirovat-uvedomleniya-v-2020-godu/1lp.jpg" alt="Firefox будет автоматически блокировать уведомления веб-сайтов в 2020 году"></a>
+				
+			</div>
+			<div class="lb-body">
+				<a href="blog/technology/" class="lb-catname">Технологии</a>
+				
+				<a class="lb-item-header" href="/blog/technology/2019-11-07-firefox-budet-blokirovat-uvedomleniya-v-2020-godu.html">Firefox будет автоматически блокировать уведомления веб-сайтов в 2020 году</a>
+				
+			</div>
+		</div>
+
+		<div class="lb-item">
+			<div class="lb-thumb">
+				
+				<a class="lb-item-header" href="/blog/cms/2019-09-14-rukovodstvo-po-prodazhe-cifrovyh-produktov-s-wordpress.html"><img src="img/cms/rukovodstvo-po-prodazhe-cifrovyh-produktov-s-wordpress/1lp.jpg" alt="Руководство по продаже цифровых продуктов с WordPress"></a>
+				
+			</div>
+			<div class="lb-body">
+				<a href="blog/cms/" class="lb-catname">CMS</a>
+				
+				<a class="lb-item-header" href="/blog/cms/2019-09-14-rukovodstvo-po-prodazhe-cifrovyh-produktov-s-wordpress.html">Руководство по продаже цифровых продуктов с WordPress</a>
+				
+			</div>
+		</div>
+
+	</div>
+
+</section>
+
+	</div>
+
+	<div class="aside-box">
+<div class="latest-comments">
+	<div class="lb-header">Последние комментарии:</div>
+	<script type="text/javascript" src="https://codehax.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=0&amp;avatar_size=26&amp;excerpt_length=150"></script>
+</div>
+
+	</div>
+
+</aside>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</main>
+<footer>
+	<div class="footer-top navbar">
+		<div class="container">
+			<div class="navbar-start">
+				<a href="" class="footer-logo">code<span>haX</span></a>
+				<nav class="main-navigation" role="navigation" aria-label="main navigation">
+<a href="/blog/coding" class="navbar-item">Кодинг</a>
+<a href="/blog/webdesign" class="navbar-item">Веб-Дизайн</a>
+<a href="/blog/graphic" class="navbar-item">Графика</a>
+<a href="/blog/technology" class="navbar-item">Технологии</a>
+<a href="/blog/cms" class="navbar-item">CMS</a>
+<a href="/about.html" class="navbar-item">О сайте</a>
+
+				</nav>
+
+			</div>
+			<div class="navbar-end">
+				<div class="social">
+<a href="https://vk.com/codehax" class="navbar-item vk" target="_blank"><span class="icon"><i class="fab fa-vk"></i></span></a> <a href="https://www.facebook.com/codehaxru" class="navbar-item fb" target="_blank"><span class="icon"><i class="fab fa-facebook-f"></i></span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-bottom navbar">
+		<div class="container">
+			<div class="copyrights">
+				<p>&copy;2020 codehaX</p>
+				<p>Копирование контента и размещение на других сайтах запрещено.</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="/js/scripts.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script id="dsq-count-scr" src="//codehax.disqus.com/count.js" async></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154575310-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154575310-1');
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(55607671, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/55607671" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body>
+
+</html>
+

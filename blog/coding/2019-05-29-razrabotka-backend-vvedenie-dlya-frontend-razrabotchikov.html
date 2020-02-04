@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<base href="/">
+
+	<title>Разработка Backend: введение для Frontend разработчиков | CodehaX - Новости из мира IT</title>
+	<meta name="description" content="Первые шаги в Node.js и Express.js. В этой статье мы рассмотрим, как настроить свой самый первый бэкенд сервер. Но, во-первых, что же такого во фронтенде и бэкенде">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="img/coding/razrabotka-backend-vvedenie-dlya-frontend-razrabotchikov/1og.jpg">
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://codehax.ru/blog/coding/2019-05-29-razrabotka-backend-vvedenie-dlya-frontend-razrabotchikov.html" />
+	<link rel="icon" href="img/favicon.png">
+	<!-- Template Basic Images End -->
+
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#202225">
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href="/css/styles.min.css">
+
+</head>
+
+<body>
+
+
+<header class="top-line navbar is-flex-touch">
+	<div class="navbar-start">
+		<a href="/" class="logo">code<span>haX</span></a>
+	</div>
+	<div class="navbar-end">
+		<nav class="main-navigation" role="navigation" aria-label="main navigation">
+<a href="/blog/coding" class="navbar-item">Кодинг</a>
+<a href="/blog/webdesign" class="navbar-item">Веб-Дизайн</a>
+<a href="/blog/graphic" class="navbar-item">Графика</a>
+<a href="/blog/technology" class="navbar-item">Технологии</a>
+<a href="/blog/cms" class="navbar-item">CMS</a>
+<a href="/about.html" class="navbar-item">О сайте</a>
+
+		</nav>
+		<div class="search-wrap">
+			<div class="search" title="Поиск по сайту...">
+				<span class="icon">
+					<i class="fas fa-search"></i>
+				</span>
+			</div>
+			<div class="search-field">
+				<form action="/search.html" id="cse-search-box">
+					<input type="hidden" name="cx" value="partner-pub-xxx:xxx" />
+					<input type="hidden" name="cof" value="FORID:10" />
+					<input type="hidden" name="ie" value="UTF-8" />
+					<input type="text" class="input" name="q" placeholder="Поиск по сайту..." />
+				</form>
+			</div>
+		</div><!-- /.search-wrap -->
+		<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
+		</a>
+	</div><!-- /.navbar-menu -->
+</header>
+
+<nav class="mobile-menu main-navigation" role="navigation" aria-label="main navigation">
+<a href="/blog/coding" class="navbar-item">Кодинг</a>
+<a href="/blog/webdesign" class="navbar-item">Веб-Дизайн</a>
+<a href="/blog/graphic" class="navbar-item">Графика</a>
+<a href="/blog/technology" class="navbar-item">Технологии</a>
+<a href="/blog/cms" class="navbar-item">CMS</a>
+<a href="/about.html" class="navbar-item">О сайте</a>
+
+</nav>
+
+
+<main>
+
+	<div class="page-header overlay" style="background-image: url(img/coding/razrabotka-backend-vvedenie-dlya-frontend-razrabotchikov/1.jpg)">
+		<div class="page-header-content">
+			<div class="container">
+				<div class="columns">
+					<div class="column is-9-widescreen is-8-tablet">
+						<div class="page-header-meta">
+
+							<a href="/blog/coding" class="page-category-link">Кодинг</a>
+							<h1 class="title">Разработка Backend: введение для Frontend разработчиков</h1>
+
+							<div class="post-meta">
+								<span class="post-date">29.05.2019</span>
+								<span class="icon"><i class="fas fa-comments"></i></span>
+								<a href="/blog/coding/2019-05-29-razrabotka-backend-vvedenie-dlya-frontend-razrabotchikov.html#disqus_thread" class="post-comments" title="Количество комментариев"></a>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="article-content">
+		<div class="container">
+			<div class="columns">
+				<div class="column is-8-desktop">
+					<article class="main-article">
+
+						<nav class="breadcrumb" aria-label="breadcrumbs">
+							<ul>
+								<li><a href="/">Главная</a></li>
+								<li><a href="blog/coding">Кодинг</a></li>
+								<li class="is-active"><a href="#" aria-current="page">Разработка Backend: введение для Frontend разработчиков</a></li>
+							</ul>
+						</nav>
+
+						<div class="article-body">
+
+
+<h2>Первые шаги в Node.js и Express.js</h2>
+
+<p>Несколько месяцев назад я обнаружил, что гуглю — &laquo;Бэкенд-разработка сложнее, чем фронтенд-разработка?&raquo; Я достиг того уровня во фронтенде, где я смог решить большинство проблем, с которыми столкнулся, — если навести справки. Но, будучи разработчиком-самоучкой, бэкенд-программирование оставалось загадкой!</p>
+
+<p>Я с облегчением обнаружил, что проблема пошла обоими путями: на каждого фронтенд разработчика, запуганного Node.js, Python или Ruby, есть бэкенд разработчик, которого пегает CSS, Vue или React. Часто это зависит только от того, что вы узнали в первую очередь.</p>
+
+<p>В этой статье мы рассмотрим, как настроить свой первый бэкенд сервер. Но сперва, что же такого во фронтенде и бэкенде, подходит одним людям и пугает других?</p>
+
+<h3>Фронтенд</h3>
+
+<p>Фронтенд имеет преимущество непосредственной визуальной реакции. Но он также имеет множество связанных соображений, таких как UI и UX, которые могут одолеть некоторых бэкенд разработчиков.</p>
+
+<p>Начать работать с HTML и CSS легко, но гораздо сложнее освоить весь спектр технологий, ставших стандартными в современном фронтенд программировании. Добавьте дополнительные сложности, такие как кросс-браузерная совместимость, и вы поймете, почему некоторые люди предпочитают придерживаться серверного кода.</p>
+
+<h3>Бэкенд</h3>
+
+<p>Что касается бэкенда, с него может быть сложнее начать, потому что труднее увидеть результаты вашего кода. Как правило, он больше зависит от использования командной строки, а также от жаргона: любой может понять, что делает тэг параграфа, но запросы GET и POST — хотя они и являются неотъемлемой частью бэкенд-разработки и Интернета — не настолько интуитивны для понимания.</p>
+
+<p>С другой стороны, вам не нужно таким же образом беспокоиться о конечных пользователях, и, как только вы почувствуете себя комфортнее с бэкендом, вы поймете, что многие основные задачи — по крайней мере, для более простых проектов — совпадают с последующими: создание сервера, настройка маршрутизации, подключение к базе данных и управление ею и т. д.</p>
+
+<h3>Для кого эта статья?</h3>
+
+<p>Я пишу эту статью для тех, кто находится в похожей ситуации со мной, кто сначала освоился с фронтендом, а теперь хочет добавить бэкенд-разработку в свой репертуар.</p>
+
+<p>Мы сосредоточимся на Node.js и Express.js: E и N в популярных технических стеках MEAN и MERN. Но обсуждаемые концепции должны быть полезны для всех, кто обладает некоторыми знаниями в области фронтенда, независимо от того, хотят ли они освоить бэкенд-разработку на JavaScript, Ruby или Python.</p>
+
+<h3>Жаргон бэкенда</h3>
+
+<p>В следующем разделе мы будем использовать Node.js для создания очень простого сервера. Но прежде чем углубиться в код, полезно понять несколько других концепций.</p>
+
+<p>Для меня ключевое различие между приобретением навыков фронтенда и бэкенда в первый раз заключалось в том, что бэкенду требовалось гораздо больше терминов, чтобы начать. Хотя вы, несомненно, сталкивались с такими терминами, как сервер, HTTP, GET и POST — использование этих понятий в бэкенд-коде требует не только поверхностного понимания. Итак, краткий обзор некоторых терминов, которые вам необходимо знать.</p>
+
+<h4>Что такое Сервер?</h4>
+
+<p>Сервер — это компьютерная программа или устройство, которое обеспечивает функциональность для других программ или устройств, известных как &laquo;клиенты&raquo;. В веб-разработке этот сервер использует HTTP для предоставления файлов пользователям, которые отображают веб-страницы. Это происходит в ответ на запросы, которые пересылаются с HTTP-клиентов пользовательских компьютеров: когда вы вводите URL в адресную строку браузера, вы отправляете HTTP-запрос.</p>
+
+<h4>Что такое HTTP?</h4>
+
+<p>HTTP означает &laquo;Hypertext Transfer Protocol&raquo; (Протокол Передачи Гипертекста), и это система правил, которая лежит в основе связи между клиентами и серверами в сети. Возможно, вы столкнулись с двумя методами HTTP, запросами GET и POST, в коде фронтенда при программировании форм, но их использование в коде внутреннего интерфейса намного шире. Node.js также имеет встроенный HTTP-модуль, который мы вскоре будем использовать для создания нашего сервера.</p>
+
+<div class="ad-article">
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-8291473972193166"
+     data-ad-slot="9506016869"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+
+<h4>Запросы и ответы</h4>
+
+<p>Два наиболее распространенных аргумента для Node — метод <code>http.createServer()</code> и много других бэкенд методов известных как <code>req</code> и <code>res</code>, которые обозначают &laquo;request&raquo;(запрос) и &laquo;response&raquo;(ответ). Это объекты со свойствами и методами, которые мы можем редактировать для настройки наших HTTP-запросов.</p>
+
+<p>Проще говоря, <code>req</code> — это то, что мы отправляем, а <code>res</code> — то, что мы получаем:</p>
+
+<ul>
+	<li><code>req</code> — это объект, который содержит информацию о клиентском HTTP-запросе, вызвавшем событие</li>
+	<li><code>res</code> используется для отправки HTTP-ответа обратно на желаемый сервер.</li>
+</ul>
+
+<p>В Express.js функции, которые предоставляют доступ к <code>req</code> и <code>res</code>, называются функциями промежуточной обработки, и вы можете узнать больше о них <a href="https://expressjs.com/en/guide/using-middleware.html" target="_blank">здесь</a>.</p>
+
+<h4>Методы HTTP</h4>
+
+<p>Есть также несколько HTTP-методов, и полезно понять два наиболее распространенных типа:</p>
+
+<ul>
+	<li><strong>GET-запросы</strong> используются для запроса данных из указанного ресурса. Они могут быть сохранены и кэшированы, и они остаются в истории браузера. При отправке формы все данные формы отображаются в URL-адресе, поэтому их никогда не следует использовать для конфиденциальных данных.</li>
+	<li><strong>POST-запросы</strong> используются для отправки данных на сервер, позволяя создавать или обновлять ресурсы. Они не могут быть сохранены или кэшированы, и они не будут отображаться в истории браузера.</li>
+</ul>
+
+<h4>Коды состояния ответа HTTP</h4>
+
+<p>Для простого сервера нам также нужно немного узнать о кодах состояния HTTP. Это сообщения, используемые для указания того, был ли определенный HTTP-запрос успешно завершен.</p>
+
+<p>Даже большинство людей, не являющихся разработчиками, столкнулись с 404 &laquo;Страница не найдена&raquo;, который появляется, когда вы пытаетесь получить доступ к несуществующему URL. И если вы когда-либо были связаны с SEO, вы могли бы знать о таком коде, как 308 &laquo;Постоянное перенаправление&raquo;, когда страница была постоянно перемещена на другой URL.</p>
+
+<p>Для нашего сервера мы хотим использовать 200 &laquo;ОК&raquo;, указывающий на то, что HTTP-запрос успешно выполнен.</p>
+
+<h4>Что такое имя хоста и порт?</h4>
+
+<p>Наконец, мы также будем выбирать имя хоста и порт, так что полезно для понимания узнать об этом немного больше.</p>
+
+<p>Имя хоста — это метка, используемая для идентификации устройства в сети, позволяющая компьютерам связываться друг с другом. Имя хоста может быть преобразовано в IP-адрес, который позволяет однозначно идентифицировать компьютер в Интернете.</p>
+
+<p>В этом примере мы будем использовать специальный IP-адрес 127.0.0.1, также известный как localhost. Локальный хост описывает конкретный хост-компьютер, который обращается к нему: каждый компьютер использует этот адрес как свой собственный, и, в отличие от обычных IP-адресов, он не позволяет компьютеру взаимодействовать с другими устройствами. Он считается &laquo;loopback&raquo; (зацикленным) адресом, поскольку отправленная ему информация направляется обратно на локальный компьютер.</p>
+
+<p>Порт является конечной точкой связи. Это число от 0 до 65535 (диапазон от 0 до 1024 зарезервирован для <a href="https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Well-known_ports" target="_blank">системных портов</a>). Вы могли часто использовать <code>localhost:3000</code> для доступа к серверу разработки для веб-приложений, а число <code>3000</code> обозначает порт. Порты можно использовать для &laquo;прослушивания&raquo; запросов на обслуживание от клиентов: в нашем примере порт будет прослушивать подключения к серверу.</p>
+
+<h3>Настройка вашего первого сервера</h3>
+
+<p>Чтобы настроить свой первый Node.js сервер, сперва убедитесь, что <a href="https://nodejs.org/en/" target="_blank">он установлен на вашем компьютере</a>. Создайте новый каталог для вашего проекта, а внутри него пустой файл JavaScript с именем <code>index.js</code>. Наконец, перейдите к этому каталогу и в терминале, который вы используете, запустите <code>npm&nbsp;init</code>.</p>
+
+<p>Вы можете принять все значения по умолчанию, однако убедитесь, что отправная точка — <code>index.js</code>. Это создаст файл <code>package.json</code> в корневом каталоге вашего проекта. Теперь мы готовы начать писать JavaScript!</p>
+
+<h4>Использование Node.js</h4>
+
+<p>Во-первых, нам нужно сделать запрос в модуле HTTP, используя <code>const http = require ('http')</code>. Затем мы можем установить имя хоста на <code>'127.0.0.1'</code>, выбрать порт и создать наш сервер, используя метод <code>http.createServer()</code>.</p>
+
+<p>В рамках этой функции мы установим для свойства <code>statusCode</code> значение <code>200</code> (что означает &laquo;ОК&raquo;). Мы также сообщим серверу, что наш результат — простой текст, используя метод <code>setHeader</code>, и мы выведем желаемый текст через метод <code>end</code>.</p>
+
+<p>Наконец, мы настроим наш сервер на прослушивание выбранного порта и хоста, и запишем сообщение в консоль, чтобы убедиться, что все работает правильно.</p>
+
+<pre>
+const http = require('http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World\n');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+</pre>
+
+<p>Чтобы активировать ваш сервер, в терминале перейдите в каталог вашего проекта и введите <code>node&nbsp;.</code> . Затем вы можете открыть <code>http://127.0.0.1:3000</code> в браузере, и вы должны увидеть слова &laquo;Hello World&raquo;. Поздравляю!</p>
+
+<h4>Использование Express.js</h4>
+
+<p>В приведенном выше примере показано, как настроить простой сервер, используя только встроенный HTTP-модуль Node.js, но как правило для основных внутренних задач используется Express.js.</p>
+
+<p>Express.js предлагает ряд преимуществ по сравнению с самим Node.js, включая статическое обслуживание файлов, просмотр кэша, простую интеграцию с рядом популярных шаблонизаторов (таких как Pug) и многочисленные полезные функции маршрутизации. Стандартный код, необходимый для настройки простого сервера, также немного более лаконичен, чем альтернатива HTTP.</p>
+
+<p>Чтобы начать работу с Express, в терминале перейдите в каталог вашего проекта: введите <code>npm&nbsp;init</code>, чтобы инициализировать ваш проект с помощью <code>package.json</code>, затем введите <code>npm&nbsp;i&nbsp;express</code>, чтобы установить express. Вы можете скопировать и вставить следующий код в index.js, и у вас будет работающий сервер:</p>
+
+<pre>
+const express = require('express');
+const app = express();
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+app.get('/', (req, res) => res.send('Hello World!'));
+
+app.listen(port, hostname, () => console.log(`Server running at http://${hostname}:${port}/`));
+</pre>
+
+<p><code>hostname</code>, <code>port</code> и <code>listen</code> идентичны предыдущему примеру, но метод <code>get</code> является функцией Express. Одним из преимуществ Express над обычным Node.js является то, что Express имеет отдельные обработчики HTTP-методов, такие как <code>get</code>, <code>post</code>, <code>put</code> и так далее. Он предоставляет простой способ маршрутизации HTTP-запросов GET по указанному пути: в данном случае, к корневому каталогу.</p>
+
+<h4>Nodemon</h4>
+
+<p>Наконец, для серверного кода очень часто используется модуль nodemon (произносится как node-mon), который автоматически перезагружает ваш сервер при каждом изменении исходного кода. Чтобы установить его, введите <code>npm&nbsp;i&nbsp;-g&nbsp;nodemon</code>, а затем, вместо того, чтобы использовать <code>node&nbsp;index</code> для запуска вашего сервера, вы можете использовать <code>nodemon&nbsp;index</code>.</p>
+
+<h3>Дальнейшие шаги</h3>
+
+<p>Я надеюсь, что эта статья будет полезна для всех, кто собирается впервые написать код на серверной стороне, и, в частности, что она разъяснила некоторые термины, которые могут помешать людям перейти в бэкенд разработку.</p>
+
+<p>Если вы заинтересованы в получении дополнительной информации, я рекомендую посмотреть <a href="https://expressjs.com/en/starter/installing.html" target="_blank">официальный раздел &laquo;Начало работы&raquo; на сайте Express.js</a>. Или, для чрезвычайно полезного и всестороннего введения в Node.js и Express, посмотрите <a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction" target="_blank">статью MDN по этой теме</a>.</p>
+
+<p>Если у вас есть какие-либо вопросы или пожелания, оставьте комментарий!</p>
+
+<p class="source">Перевод статьи <a href="https://medium.com/@bretcameron/backend-development-an-introduction-for-frontend-developers-ce7fb36848df" target="_blank">&laquo;Backend Development: an Introduction for Frontend Developers&raquo;</a></p>
+
+
+						</div>
+
+						<div class="likely-on-page">
+							<div class="likely" data-url="https://codehax.ru/blog/coding/2019-05-29-razrabotka-backend-vvedenie-dlya-frontend-razrabotchikov.html" data-media="coding/razrabotka-backend-vvedenie-dlya-frontend-razrabotchikov/1.jpg" data-title="Разработка Backend: введение для Frontend разработчиков">
+								<div class="vkontakte" title="Поделиться Вконтакте">Вконтакте</div>
+								<div class="facebook" title="Поделиться в Facebook">Facebook</div>
+								<div class="twitter" title="Поделиться в Twitter">Twitter</div>
+								<div class="odnoklassniki" title="Поделиться в ОК">Однокласснки</div>
+							</div>
+						</div>
+
+						<div class="ad article-top-ad">
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-8291473972193166"
+     data-ad-slot="5847286532"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+						</div>
+
+						<div class="read-more">
+							<div class="read-more-header">Читать еще:</div>
+							<ul>
+								
+								
+								
+									
+									<li><a href="/blog/coding/2020-01-09-32-soveta-dlya-kazhdogo-veb-razrabotchika-v-2020.html">32 совета для каждого веб-разработчика в 2020 году</a></li>
+									
+								
+									
+									<li><a href="/blog/coding/2019-11-14-predstoyashhie-novye-funkcii-javascript-kotorye-vy-dolzhny-znat.html">Предстоящие новые функции JavaScript, которые Вы должны знать, если используете JavaScript каждый день</a></li>
+									
+								
+									
+									<li><a href="/blog/coding/2019-11-03-samaya-vazhnaya-osobennost-javascript.html">Самая важная особенность JavaScript</a></li>
+									
+								
+									
+									<li><a href="/blog/coding/2019-11-01-obzor-klassov-v-javascript.html">Обзор классов в JavaScript</a></li>
+									
+								
+									
+								
+									
+									<li><a href="/blog/coding/2019-05-20-kratkoe-vvedenie-v-funkcii-vysshego-poryadka-v-javascript.html">Краткое введение в функции высшего порядка в JavaScript</a></li>
+									
+								
+							</ul>
+						</div>
+
+						<div class="disqus-placeholder">Loading comments...</div>
+						<div class="comments">
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://codehax.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+						</div>
+
+					</article>
+				</div>
+				<div class="column is-3-widescreen is-4-tablet">
+<aside class="main-aside">
+
+	<div class="aside-box">
+<ins class="adsbygoogle side_ad"
+     style="display:inline-block"
+     data-ad-client="ca-pub-8291473972193166"
+     data-ad-slot="5932591608"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+	</div>
+
+	<div class="aside-box">
+<section class="latest-box">
+
+	<div class="lb-header">Последние статьи:</div>
+
+	<div class="lb-list">
+
+		<div class="lb-item">
+			<div class="lb-thumb">
+				
+				<a class="lb-item-header" href="/blog/coding/2020-01-09-32-soveta-dlya-kazhdogo-veb-razrabotchika-v-2020.html"><img src="img/coding/32-soveta-dlya-kazhdogo-veb-razrabotchika-v-2020/1lp.jpg" alt="32 совета для каждого веб-разработчика в 2020 году"></a>
+				
+			</div>
+			<div class="lb-body">
+				<a href="blog/coding/" class="lb-catname">Кодинг</a>
+				
+				<a class="lb-item-header" href="/blog/coding/2020-01-09-32-soveta-dlya-kazhdogo-veb-razrabotchika-v-2020.html">32 совета для каждого веб-разработчика в 2020 году</a>
+				
+			</div>
+		</div>
+
+		<div class="lb-item">
+			<div class="lb-thumb">
+				
+				<a class="lb-item-header" href="/blog/webdesign/2019-07-01-7-hudshih-oshibok-ux-ogranichivayushhih-vash-rost.html"><img src="img/webdesign/7-hudshih-oshibok-ux-ogranichivayushhih-vash-rost/1lp.jpg" alt="7 худших ошибок UX, ограничивающих ваш рост"></a>
+				
+			</div>
+			<div class="lb-body">
+				<a href="blog/webdesign/" class="lb-catname">Веб-дизайн</a>
+				
+				<a class="lb-item-header" href="/blog/webdesign/2019-07-01-7-hudshih-oshibok-ux-ogranichivayushhih-vash-rost.html">7 худших ошибок UX, ограничивающих ваш рост</a>
+				
+			</div>
+		</div>
+
+		<div class="lb-item">
+			<div class="lb-thumb">
+				
+				<a class="lb-item-header" href="/blog/graphic/2019-12-05-12-besplatnyh-novogodnih-shriftov-dlya-rasprostraneniya-novogodnego-duha.html"><img src="img/graphic/12-besplatnyh-novogodnih-shriftov-dlya-rasprostraneniya-novogodnego-duha/1lp.jpg" alt="12 бесплатных Новогодних шрифтов для распространения Новогоднего духа"></a>
+				
+			</div>
+			<div class="lb-body">
+				<a href="blog/graphic/" class="lb-catname">Графика</a>
+				
+				<a class="lb-item-header" href="/blog/graphic/2019-12-05-12-besplatnyh-novogodnih-shriftov-dlya-rasprostraneniya-novogodnego-duha.html">12 бесплатных Новогодних шрифтов для распространения Новогоднего духа</a>
+				
+			</div>
+		</div>
+
+		<div class="lb-item">
+			<div class="lb-thumb">
+				
+				<a class="lb-item-header" href="/blog/technology/2019-11-07-firefox-budet-blokirovat-uvedomleniya-v-2020-godu.html"><img src="img/technology/firefox-budet-blokirovat-uvedomleniya-v-2020-godu/1lp.jpg" alt="Firefox будет автоматически блокировать уведомления веб-сайтов в 2020 году"></a>
+				
+			</div>
+			<div class="lb-body">
+				<a href="blog/technology/" class="lb-catname">Технологии</a>
+				
+				<a class="lb-item-header" href="/blog/technology/2019-11-07-firefox-budet-blokirovat-uvedomleniya-v-2020-godu.html">Firefox будет автоматически блокировать уведомления веб-сайтов в 2020 году</a>
+				
+			</div>
+		</div>
+
+		<div class="lb-item">
+			<div class="lb-thumb">
+				
+				<a class="lb-item-header" href="/blog/cms/2019-09-14-rukovodstvo-po-prodazhe-cifrovyh-produktov-s-wordpress.html"><img src="img/cms/rukovodstvo-po-prodazhe-cifrovyh-produktov-s-wordpress/1lp.jpg" alt="Руководство по продаже цифровых продуктов с WordPress"></a>
+				
+			</div>
+			<div class="lb-body">
+				<a href="blog/cms/" class="lb-catname">CMS</a>
+				
+				<a class="lb-item-header" href="/blog/cms/2019-09-14-rukovodstvo-po-prodazhe-cifrovyh-produktov-s-wordpress.html">Руководство по продаже цифровых продуктов с WordPress</a>
+				
+			</div>
+		</div>
+
+	</div>
+
+</section>
+
+	</div>
+
+	<div class="aside-box">
+<div class="latest-comments">
+	<div class="lb-header">Последние комментарии:</div>
+	<script type="text/javascript" src="https://codehax.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=0&amp;avatar_size=26&amp;excerpt_length=150"></script>
+</div>
+
+	</div>
+
+</aside>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</main>
+<footer>
+	<div class="footer-top navbar">
+		<div class="container">
+			<div class="navbar-start">
+				<a href="" class="footer-logo">code<span>haX</span></a>
+				<nav class="main-navigation" role="navigation" aria-label="main navigation">
+<a href="/blog/coding" class="navbar-item">Кодинг</a>
+<a href="/blog/webdesign" class="navbar-item">Веб-Дизайн</a>
+<a href="/blog/graphic" class="navbar-item">Графика</a>
+<a href="/blog/technology" class="navbar-item">Технологии</a>
+<a href="/blog/cms" class="navbar-item">CMS</a>
+<a href="/about.html" class="navbar-item">О сайте</a>
+
+				</nav>
+
+			</div>
+			<div class="navbar-end">
+				<div class="social">
+<a href="https://vk.com/codehax" class="navbar-item vk" target="_blank"><span class="icon"><i class="fab fa-vk"></i></span></a> <a href="https://www.facebook.com/codehaxru" class="navbar-item fb" target="_blank"><span class="icon"><i class="fab fa-facebook-f"></i></span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-bottom navbar">
+		<div class="container">
+			<div class="copyrights">
+				<p>&copy;2020 codehaX</p>
+				<p>Копирование контента и размещение на других сайтах запрещено.</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="/js/scripts.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script id="dsq-count-scr" src="//codehax.disqus.com/count.js" async></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154575310-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154575310-1');
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(55607671, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/55607671" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body>
+
+</html>
+

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<base href="/">
+
+	<title>Самая важная особенность JavaScript | CodehaX - Новости из мира IT</title>
+	<meta name="description" content="Да, важнее, чем подъем, замыкания и область видимости">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="img/coding/samaya-vazhnaya-osobennost-javascript/1og.jpg">
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://codehax.ru/blog/coding/2019-11-03-samaya-vazhnaya-osobennost-javascript.html" />
+	<link rel="icon" href="img/favicon.png">
+	<!-- Template Basic Images End -->
+
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#202225">
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href="/css/styles.min.css">
+
+</head>
+
+<body>
+
+
+<header class="top-line navbar is-flex-touch">
+	<div class="navbar-start">
+		<a href="/" class="logo">code<span>haX</span></a>
+	</div>
+	<div class="navbar-end">
+		<nav class="main-navigation" role="navigation" aria-label="main navigation">
+<a href="/blog/coding" class="navbar-item">Кодинг</a>
+<a href="/blog/webdesign" class="navbar-item">Веб-Дизайн</a>
+<a href="/blog/graphic" class="navbar-item">Графика</a>
+<a href="/blog/technology" class="navbar-item">Технологии</a>
+<a href="/blog/cms" class="navbar-item">CMS</a>
+<a href="/about.html" class="navbar-item">О сайте</a>
+
+		</nav>
+		<div class="search-wrap">
+			<div class="search" title="Поиск по сайту...">
+				<span class="icon">
+					<i class="fas fa-search"></i>
+				</span>
+			</div>
+			<div class="search-field">
+				<form action="/search.html" id="cse-search-box">
+					<input type="hidden" name="cx" value="partner-pub-xxx:xxx" />
+					<input type="hidden" name="cof" value="FORID:10" />
+					<input type="hidden" name="ie" value="UTF-8" />
+					<input type="text" class="input" name="q" placeholder="Поиск по сайту..." />
+				</form>
+			</div>
+		</div><!-- /.search-wrap -->
+		<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
+		</a>
+	</div><!-- /.navbar-menu -->
+</header>
+
+<nav class="mobile-menu main-navigation" role="navigation" aria-label="main navigation">
+<a href="/blog/coding" class="navbar-item">Кодинг</a>
+<a href="/blog/webdesign" class="navbar-item">Веб-Дизайн</a>
+<a href="/blog/graphic" class="navbar-item">Графика</a>
+<a href="/blog/technology" class="navbar-item">Технологии</a>
+<a href="/blog/cms" class="navbar-item">CMS</a>
+<a href="/about.html" class="navbar-item">О сайте</a>
+
+</nav>
+
+
+<main>
+
+	<div class="page-header overlay" style="background-image: url(img/coding/samaya-vazhnaya-osobennost-javascript/1.jpg)">
+		<div class="page-header-content">
+			<div class="container">
+				<div class="columns">
+					<div class="column is-9-widescreen is-8-tablet">
+						<div class="page-header-meta">
+
+							<a href="/blog/coding" class="page-category-link">Кодинг</a>
+							<h1 class="title">Самая важная особенность JavaScript</h1>
+
+							<div class="post-meta">
+								<span class="post-date">03.11.2019</span>
+								<span class="icon"><i class="fas fa-comments"></i></span>
+								<a href="/blog/coding/2019-11-03-samaya-vazhnaya-osobennost-javascript.html#disqus_thread" class="post-comments" title="Количество комментариев"></a>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="article-content">
+		<div class="container">
+			<div class="columns">
+				<div class="column is-8-desktop">
+					<article class="main-article">
+
+						<nav class="breadcrumb" aria-label="breadcrumbs">
+							<ul>
+								<li><a href="/">Главная</a></li>
+								<li><a href="blog/coding">Кодинг</a></li>
+								<li class="is-active"><a href="#" aria-current="page">Самая важная особенность JavaScript</a></li>
+							</ul>
+						</nav>
+
+						<div class="article-body">
+
+
+<p>Да, важнее, чем подъем, замыкания и область видимости</p>
+
+<p>Наиболее важной особенностью JavaScript является то, что функции являются объектами.</p>
+
+<p>Вот и все. Понимание этого открывает совершенно новое понимание языка JavaScript. В JavaScript функции являются объектами. А в JavaScript объекты имеют свойства, состоящие из пар ключ-значение. А именно, функции JavaScript имеют свойства, которые состоят из пар ключ-значение.</p>
+
+<p>Точно так же, как массивы (также объекты JavaScript) имеют свойство prototype, к которому могут быть присоединены уникальные методы (например, <code>Array.prototype.filter&nbsp;()</code>), функции также имеют свойство prototype. Среди свойств <code>Function.prototype</code> есть уникальные свойства, которые дают код функции, который может быть вызван (например,суть вашей функции). Но исполняемый код не является единственным свойством функции.</p>
+
+<p>Возможно, вы сталкивались с методами <code>.apply</code>, <code>.bind</code> и <code>.call</code>. Эти методы, как и следовало ожидать, являются методами в свойстве <code>Function.prototype</code>. <code>Function.prototype</code> также имеет свои собственные свойства, такие как <code>.name</code>, который содержит имя функции, и <code>.length</code>, который содержит число аргументов, ожидаемых функцией.</p>
+
+<h3>Почему это важно и как оно используется?</h3>
+
+<p>Возможно, вы слышали, что JavaScript описан как <em>функциональный язык</em>. Это означает, что в программах на JavaScript строятся функции.</p>
+
+<p>Функции считаются <em>первоклассными</em>, что означает, что функции могут делать что угодно - передаваться в качестве аргументов другим функциям, вставляться в структуры данных, присваиваться переменным и возвращаться другими функциями.</p>
+
+<h4>Вот несколько примеров, которые показывают, что функции JavaScript на самом деле являются просто объектами</h4>
+
+<p>Скажем, мы присваиваем функцию переменной <code>myFunction</code>:</p>
+
+<pre>var myFunction = function (str) { console.log(str) }</pre>
+
+<p>Мы можем получить доступ к свойству <code>name</code> функции так же, как к свойству в любом объекте:</p>
+
+<pre>
+myFunction[“name”]
+myFunction.name
+
+// both return “myFunction”
+</pre>
+
+<p>Аналогично, мы можем получить доступ к свойству <code>length</code> функции, которое возвращает количество аргументов, которые принимает функция:</p>
+
+<pre>
+myFunction[“length”]
+myFunction.length
+
+// both return 1
+// because myFunction takes in one argument, str
+</pre>
+
+<p>Мы также можем назначить новые свойства функции — так же, как вы бы назначали свойства любому другому объекту JavaScript:</p>
+
+<pre>
+myFunction.myNewProperty = "hello"
+
+myFunction.myNewProperty
+// returns "hello"
+</pre>
+
+<p>А поскольку функции в JavaScript являются первоклассными гражданами, мы можем делать с ними практически все, включая назначение других функций в качестве свойств функций.</p>
+
+<pre>
+var coolFunc = function() { return 1 }
+myFunction.coolProperty = coolFunc
+
+myFunction.coolProperty
+// returns function() { return 1 }
+
+myFunction.coolProperty()
+// returns 1
+</pre>
+
+<p>Хотя вы, возможно, никогда не захотите назначать функцию как свойство другой функции на практике, этот простой пример иллюстрирует эту концепцию.</p>
+
+<p>Функции - это просто объекты JavaScript, и, как следует, все, что вы можете сделать с объектом в JavaScript, вы можете сделать с помощью функции.</p>
+
+<p>Единственная реальная разница с функциями заключается в том, что они, наряду с другими объектами в JavaScript, имеют свои собственные уникальные методы и свойства, один из которых - это метод, который содержит исполняемый код функции, а другой - тот, который вызывает этот исполняемый код.</p>
+
+<p>Заключение</p>
+
+<p>Так что давайте, попробуйте.</p>
+
+<p>Поиграйте с объектами так же, как и с простым написанным объектом <code>{key: “value”}</code>.</p>
+
+<p>Вы будете удивлены тем, что вы можете сделать, и, в свою очередь, познакомитесь с мощностью, которую, глядя на функции таким образом, можно создать.</p>
+
+<p class="source">Перевод статьи <a href="https://medium.com/better-programming/the-single-most-important-feature-of-javascript-d65ae448eb19" target="_blank">&laquo;The Single Most Important Feature of JavaScript&raquo;</a></p>
+
+
+						</div>
+
+						<div class="likely-on-page">
+							<div class="likely" data-url="https://codehax.ru/blog/coding/2019-11-03-samaya-vazhnaya-osobennost-javascript.html" data-media="coding/samaya-vazhnaya-osobennost-javascript/1.jpg" data-title="Самая важная особенность JavaScript">
+								<div class="vkontakte" title="Поделиться Вконтакте">Вконтакте</div>
+								<div class="facebook" title="Поделиться в Facebook">Facebook</div>
+								<div class="twitter" title="Поделиться в Twitter">Twitter</div>
+								<div class="odnoklassniki" title="Поделиться в ОК">Однокласснки</div>
+							</div>
+						</div>
+
+						<div class="ad article-top-ad">
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-8291473972193166"
+     data-ad-slot="5847286532"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+						</div>
+
+						<div class="read-more">
+							<div class="read-more-header">Читать еще:</div>
+							<ul>
+								
+								
+								
+									
+									<li><a href="/blog/coding/2020-01-09-32-soveta-dlya-kazhdogo-veb-razrabotchika-v-2020.html">32 совета для каждого веб-разработчика в 2020 году</a></li>
+									
+								
+									
+									<li><a href="/blog/coding/2019-11-14-predstoyashhie-novye-funkcii-javascript-kotorye-vy-dolzhny-znat.html">Предстоящие новые функции JavaScript, которые Вы должны знать, если используете JavaScript каждый день</a></li>
+									
+								
+									
+								
+									
+									<li><a href="/blog/coding/2019-11-01-obzor-klassov-v-javascript.html">Обзор классов в JavaScript</a></li>
+									
+								
+									
+									<li><a href="/blog/coding/2019-05-29-razrabotka-backend-vvedenie-dlya-frontend-razrabotchikov.html">Разработка Backend: введение для Frontend разработчиков</a></li>
+									
+								
+									
+									<li><a href="/blog/coding/2019-05-20-kratkoe-vvedenie-v-funkcii-vysshego-poryadka-v-javascript.html">Краткое введение в функции высшего порядка в JavaScript</a></li>
+									
+								
+							</ul>
+						</div>
+
+						<div class="disqus-placeholder">Loading comments...</div>
+						<div class="comments">
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://codehax.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+						</div>
+
+					</article>
+				</div>
+				<div class="column is-3-widescreen is-4-tablet">
+<aside class="main-aside">
+
+	<div class="aside-box">
+<ins class="adsbygoogle side_ad"
+     style="display:inline-block"
+     data-ad-client="ca-pub-8291473972193166"
+     data-ad-slot="5932591608"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+	</div>
+
+	<div class="aside-box">
+<section class="latest-box">
+
+	<div class="lb-header">Последние статьи:</div>
+
+	<div class="lb-list">
+
+		<div class="lb-item">
+			<div class="lb-thumb">
+				
+				<a class="lb-item-header" href="/blog/coding/2020-01-09-32-soveta-dlya-kazhdogo-veb-razrabotchika-v-2020.html"><img src="img/coding/32-soveta-dlya-kazhdogo-veb-razrabotchika-v-2020/1lp.jpg" alt="32 совета для каждого веб-разработчика в 2020 году"></a>
+				
+			</div>
+			<div class="lb-body">
+				<a href="blog/coding/" class="lb-catname">Кодинг</a>
+				
+				<a class="lb-item-header" href="/blog/coding/2020-01-09-32-soveta-dlya-kazhdogo-veb-razrabotchika-v-2020.html">32 совета для каждого веб-разработчика в 2020 году</a>
+				
+			</div>
+		</div>
+
+		<div class="lb-item">
+			<div class="lb-thumb">
+				
+				<a class="lb-item-header" href="/blog/webdesign/2019-07-01-7-hudshih-oshibok-ux-ogranichivayushhih-vash-rost.html"><img src="img/webdesign/7-hudshih-oshibok-ux-ogranichivayushhih-vash-rost/1lp.jpg" alt="7 худших ошибок UX, ограничивающих ваш рост"></a>
+				
+			</div>
+			<div class="lb-body">
+				<a href="blog/webdesign/" class="lb-catname">Веб-дизайн</a>
+				
+				<a class="lb-item-header" href="/blog/webdesign/2019-07-01-7-hudshih-oshibok-ux-ogranichivayushhih-vash-rost.html">7 худших ошибок UX, ограничивающих ваш рост</a>
+				
+			</div>
+		</div>
+
+		<div class="lb-item">
+			<div class="lb-thumb">
+				
+				<a class="lb-item-header" href="/blog/graphic/2019-12-05-12-besplatnyh-novogodnih-shriftov-dlya-rasprostraneniya-novogodnego-duha.html"><img src="img/graphic/12-besplatnyh-novogodnih-shriftov-dlya-rasprostraneniya-novogodnego-duha/1lp.jpg" alt="12 бесплатных Новогодних шрифтов для распространения Новогоднего духа"></a>
+				
+			</div>
+			<div class="lb-body">
+				<a href="blog/graphic/" class="lb-catname">Графика</a>
+				
+				<a class="lb-item-header" href="/blog/graphic/2019-12-05-12-besplatnyh-novogodnih-shriftov-dlya-rasprostraneniya-novogodnego-duha.html">12 бесплатных Новогодних шрифтов для распространения Новогоднего духа</a>
+				
+			</div>
+		</div>
+
+		<div class="lb-item">
+			<div class="lb-thumb">
+				
+				<a class="lb-item-header" href="/blog/technology/2019-11-07-firefox-budet-blokirovat-uvedomleniya-v-2020-godu.html"><img src="img/technology/firefox-budet-blokirovat-uvedomleniya-v-2020-godu/1lp.jpg" alt="Firefox будет автоматически блокировать уведомления веб-сайтов в 2020 году"></a>
+				
+			</div>
+			<div class="lb-body">
+				<a href="blog/technology/" class="lb-catname">Технологии</a>
+				
+				<a class="lb-item-header" href="/blog/technology/2019-11-07-firefox-budet-blokirovat-uvedomleniya-v-2020-godu.html">Firefox будет автоматически блокировать уведомления веб-сайтов в 2020 году</a>
+				
+			</div>
+		</div>
+
+		<div class="lb-item">
+			<div class="lb-thumb">
+				
+				<a class="lb-item-header" href="/blog/cms/2019-09-14-rukovodstvo-po-prodazhe-cifrovyh-produktov-s-wordpress.html"><img src="img/cms/rukovodstvo-po-prodazhe-cifrovyh-produktov-s-wordpress/1lp.jpg" alt="Руководство по продаже цифровых продуктов с WordPress"></a>
+				
+			</div>
+			<div class="lb-body">
+				<a href="blog/cms/" class="lb-catname">CMS</a>
+				
+				<a class="lb-item-header" href="/blog/cms/2019-09-14-rukovodstvo-po-prodazhe-cifrovyh-produktov-s-wordpress.html">Руководство по продаже цифровых продуктов с WordPress</a>
+				
+			</div>
+		</div>
+
+	</div>
+
+</section>
+
+	</div>
+
+	<div class="aside-box">
+<div class="latest-comments">
+	<div class="lb-header">Последние комментарии:</div>
+	<script type="text/javascript" src="https://codehax.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=0&amp;avatar_size=26&amp;excerpt_length=150"></script>
+</div>
+
+	</div>
+
+</aside>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</main>
+<footer>
+	<div class="footer-top navbar">
+		<div class="container">
+			<div class="navbar-start">
+				<a href="" class="footer-logo">code<span>haX</span></a>
+				<nav class="main-navigation" role="navigation" aria-label="main navigation">
+<a href="/blog/coding" class="navbar-item">Кодинг</a>
+<a href="/blog/webdesign" class="navbar-item">Веб-Дизайн</a>
+<a href="/blog/graphic" class="navbar-item">Графика</a>
+<a href="/blog/technology" class="navbar-item">Технологии</a>
+<a href="/blog/cms" class="navbar-item">CMS</a>
+<a href="/about.html" class="navbar-item">О сайте</a>
+
+				</nav>
+
+			</div>
+			<div class="navbar-end">
+				<div class="social">
+<a href="https://vk.com/codehax" class="navbar-item vk" target="_blank"><span class="icon"><i class="fab fa-vk"></i></span></a> <a href="https://www.facebook.com/codehaxru" class="navbar-item fb" target="_blank"><span class="icon"><i class="fab fa-facebook-f"></i></span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-bottom navbar">
+		<div class="container">
+			<div class="copyrights">
+				<p>&copy;2020 codehaX</p>
+				<p>Копирование контента и размещение на других сайтах запрещено.</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="/js/scripts.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script id="dsq-count-scr" src="//codehax.disqus.com/count.js" async></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154575310-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154575310-1');
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(55607671, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/55607671" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body>
+
+</html>
+

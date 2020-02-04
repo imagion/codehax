@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>CodehaX</title>
+		<description>Новости электроники, технологий, современных гаджетов и другая актуальная информация современной IT индустрии</description>
+		<link>https://codehax.ru</link>
+		<atom:link href="https://codehax.ru/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>32 совета для каждого веб-разработчика в 2020 году</title>
+				<description><![CDATA[
+					<a href="https://codehax.ru/blog/coding/2020-01-09-32-soveta-dlya-kazhdogo-veb-razrabotchika-v-2020.html"><img width="100%" src="https://codehax.rucoding/32-soveta-dlya-kazhdogo-veb-razrabotchika-v-2020/1.jpg"></a>
+					2019 год закончился, и это был год с множеством проблем и возможностей для разработчиков, таких как вы и я.
+					]]></description>
+				<pubDate>Thu, 09 Jan 2020 00:00:00 +0400</pubDate>
+				<link>https://codehax.ru/blog/coding/2020-01-09-32-soveta-dlya-kazhdogo-veb-razrabotchika-v-2020.html</link>
+				<guid isPermaLink="true">https://codehax.ru/blog/coding/2020-01-09-32-soveta-dlya-kazhdogo-veb-razrabotchika-v-2020.html</guid>
+			</item>
+		
+			<item>
+				<title>12 бесплатных Новогодних шрифтов для распространения Новогоднего духа</title>
+				<description><![CDATA[
+					<a href="https://codehax.ru/blog/graphic/2019-12-05-12-besplatnyh-novogodnih-shriftov-dlya-rasprostraneniya-novogodnego-duha.html"><img width="100%" src="https://codehax.rugraphic/12-besplatnyh-novogodnih-shriftov-dlya-rasprostraneniya-novogodnego-duha/1.jpg"></a>
+					Пришло время начать готовиться к Новогодним проектам, если вы еще этого не сделали!
+					]]></description>
+				<pubDate>Thu, 05 Dec 2019 00:00:00 +0400</pubDate>
+				<link>https://codehax.ru/blog/graphic/2019-12-05-12-besplatnyh-novogodnih-shriftov-dlya-rasprostraneniya-novogodnego-duha.html</link>
+				<guid isPermaLink="true">https://codehax.ru/blog/graphic/2019-12-05-12-besplatnyh-novogodnih-shriftov-dlya-rasprostraneniya-novogodnego-duha.html</guid>
+			</item>
+		
+			<item>
+				<title>Коллекция бесплатных Новогодних дизайнерских ресурсов</title>
+				<description><![CDATA[
+					<a href="https://codehax.ru/blog/graphic/2019-11-21-kollekciya-besplatnyh-novogodnih-dizajnerskih-resursov.html"><img width="100%" src="https://codehax.rugraphic/kollekciya-besplatnyh-novogodnih-dizajnerskih-resursov/1.jpg"></a>
+					С приближением Нового Года, вас, наверное, завалит Новогодними дизайнами. Вот почему я собрал для вас множество бесплатных Новогодних ресурсов.
+					]]></description>
+				<pubDate>Thu, 21 Nov 2019 00:00:00 +0400</pubDate>
+				<link>https://codehax.ru/blog/graphic/2019-11-21-kollekciya-besplatnyh-novogodnih-dizajnerskih-resursov.html</link>
+				<guid isPermaLink="true">https://codehax.ru/blog/graphic/2019-11-21-kollekciya-besplatnyh-novogodnih-dizajnerskih-resursov.html</guid>
+			</item>
+		
+			<item>
+				<title>Предстоящие новые функции JavaScript, которые Вы должны знать, если используете JavaScript каждый день</title>
+				<description><![CDATA[
+					<a href="https://codehax.ru/blog/coding/2019-11-14-predstoyashhie-novye-funkcii-javascript-kotorye-vy-dolzhny-znat.html"><img width="100%" src="https://codehax.rucoding/predstoyashhie-novye-funkcii-javascript-kotorye-vy-dolzhny-znat/1.jpg"></a>
+					Вы, вероятно, не заметили, какие функции были добавлены в последней версии ECMAScript, выпущенной в июне 2019 года. Я кратко покажу вам новые функции, добавленные в
+					]]></description>
+				<pubDate>Thu, 14 Nov 2019 00:00:00 +0400</pubDate>
+				<link>https://codehax.ru/blog/coding/2019-11-14-predstoyashhie-novye-funkcii-javascript-kotorye-vy-dolzhny-znat.html</link>
+				<guid isPermaLink="true">https://codehax.ru/blog/coding/2019-11-14-predstoyashhie-novye-funkcii-javascript-kotorye-vy-dolzhny-znat.html</guid>
+			</item>
+		
+			<item>
+				<title>Firefox будет автоматически блокировать уведомления веб-сайтов в 2020 году</title>
+				<description><![CDATA[
+					<a href="https://codehax.ru/blog/technology/2019-11-07-firefox-budet-blokirovat-uvedomleniya-v-2020-godu.html"><img width="100%" src="https://codehax.rutechnology/firefox-budet-blokirovat-uvedomleniya-v-2020-godu/1.jpg"></a>
+					В Интернете есть множество сайтов, которые каждый раз, при посещении, отправляют всплывающее уведомление. Я даже перестал из-за этого заходить на некоторые из них.
+					]]></description>
+				<pubDate>Thu, 07 Nov 2019 00:00:00 +0400</pubDate>
+				<link>https://codehax.ru/blog/technology/2019-11-07-firefox-budet-blokirovat-uvedomleniya-v-2020-godu.html</link>
+				<guid isPermaLink="true">https://codehax.ru/blog/technology/2019-11-07-firefox-budet-blokirovat-uvedomleniya-v-2020-godu.html</guid>
+			</item>
+		
+			<item>
+				<title>Самая важная особенность JavaScript</title>
+				<description><![CDATA[
+					<a href="https://codehax.ru/blog/coding/2019-11-03-samaya-vazhnaya-osobennost-javascript.html"><img width="100%" src="https://codehax.rucoding/samaya-vazhnaya-osobennost-javascript/1.jpg"></a>
+					Да, важнее, чем подъем, замыкания и область видимости
+					]]></description>
+				<pubDate>Sun, 03 Nov 2019 00:00:00 +0400</pubDate>
+				<link>https://codehax.ru/blog/coding/2019-11-03-samaya-vazhnaya-osobennost-javascript.html</link>
+				<guid isPermaLink="true">https://codehax.ru/blog/coding/2019-11-03-samaya-vazhnaya-osobennost-javascript.html</guid>
+			</item>
+		
+			<item>
+				<title>Обзор классов в JavaScript</title>
+				<description><![CDATA[
+					<a href="https://codehax.ru/blog/coding/2019-11-01-obzor-klassov-v-javascript.html"><img width="100%" src="https://codehax.rucoding/obzor-klassov-v-javascript/1.jpg"></a>
+					Классы JavaScript, представленные в ECMAScript 2015, в основном являются синтаксическим сахаром по сравнению с существующим наследованием JavaScript на основе прототипов.
+					]]></description>
+				<pubDate>Fri, 01 Nov 2019 00:00:00 +0400</pubDate>
+				<link>https://codehax.ru/blog/coding/2019-11-01-obzor-klassov-v-javascript.html</link>
+				<guid isPermaLink="true">https://codehax.ru/blog/coding/2019-11-01-obzor-klassov-v-javascript.html</guid>
+			</item>
+		
+			<item>
+				<title>29 уроков по коллажу в Photoshop для начинающих</title>
+				<description><![CDATA[
+					<a href="https://codehax.ru/blog/graphic/2019-10-13-29-urokov-po-kollazhu-v-photoshop-dlya-nachinayushhih.html"><img width="100%" src="https://codehax.rugraphic/29-urokov-po-kollazhu-v-photoshop-dlya-nachinayushhih/1.jpg"></a>
+					Если вы любили делать коллажи с помощью ножниц, клея, маминых журналов и подписок папы, когда вы росли, нет причин останавливаться сейчас. Разница лишь в том,
+					]]></description>
+				<pubDate>Sun, 13 Oct 2019 00:00:00 +0400</pubDate>
+				<link>https://codehax.ru/blog/graphic/2019-10-13-29-urokov-po-kollazhu-v-photoshop-dlya-nachinayushhih.html</link>
+				<guid isPermaLink="true">https://codehax.ru/blog/graphic/2019-10-13-29-urokov-po-kollazhu-v-photoshop-dlya-nachinayushhih.html</guid>
+			</item>
+		
+			<item>
+				<title>Случаи применения Android-сталкера в 2019 году выросли на 373%</title>
+				<description><![CDATA[
+					<a href="https://codehax.ru/blog/technology/2019-10-07-sluchai-primeneniya-android-stalkera-v-2019-godu-vyrosli-na-373.html"><img width="100%" src="https://codehax.rutechnology/sluchai-primeneniya-android-stalkera-v-2019-godu-vyrosli-na-373/1.jpg"></a>
+					Приложения-сталкеры - программное обеспечение, используемое для слежки за сообщениями пользователей, информацией о вызовах и местоположениями GPS. Количество этих приложений
+					]]></description>
+				<pubDate>Mon, 07 Oct 2019 00:00:00 +0400</pubDate>
+				<link>https://codehax.ru/blog/technology/2019-10-07-sluchai-primeneniya-android-stalkera-v-2019-godu-vyrosli-na-373.html</link>
+				<guid isPermaLink="true">https://codehax.ru/blog/technology/2019-10-07-sluchai-primeneniya-android-stalkera-v-2019-godu-vyrosli-na-373.html</guid>
+			</item>
+		
+			<item>
+				<title>Руководство по продаже цифровых продуктов с WordPress</title>
+				<description><![CDATA[
+					<a href="https://codehax.ru/blog/cms/2019-09-14-rukovodstvo-po-prodazhe-cifrovyh-produktov-s-wordpress.html"><img width="100%" src="https://codehax.rucms/rukovodstvo-po-prodazhe-cifrovyh-produktov-s-wordpress/1.jpg"></a>
+					Описание
+					]]></description>
+				<pubDate>Sat, 14 Sep 2019 00:00:00 +0400</pubDate>
+				<link>https://codehax.ru/blog/cms/2019-09-14-rukovodstvo-po-prodazhe-cifrovyh-produktov-s-wordpress.html</link>
+				<guid isPermaLink="true">https://codehax.ru/blog/cms/2019-09-14-rukovodstvo-po-prodazhe-cifrovyh-produktov-s-wordpress.html</guid>
+			</item>
+		
+	</channel>
+</rss>
