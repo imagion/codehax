@@ -1,5 +1,6 @@
 backend:
   name: git-gateway # Netlify’s Git Gateway connects to Git provider’s API
+  repo: imagion/codehax
   branch: master # Branch to update (optional; defaults to master)
 
 media_folder: "img/uploads" # Folder where user uploaded files should go
@@ -22,9 +23,6 @@ collections: # A list of collections the CMS should be able to edit
       - label: "Author"
         name: "author"
         widget: "select"
-        options:
-          - { label: "Dan Urbanowicz", value: "dan_urbanowicz" }
-          - { label: "John Doe", value: "john_doe" }
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss"}
       - {label: "Intro Paragraph", name: "intro_paragraph", widget: "markdown", required: false}
       - {label: "Body", name: "body", widget: "markdown", required: false}
