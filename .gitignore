@@ -8,7 +8,6 @@ Gemfile.lock
 package.json
 /node_modules/
 
-
 # Adobe files
 *.pdf
 *.ai
