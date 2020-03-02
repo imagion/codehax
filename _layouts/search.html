@@ -1,0 +1,43 @@
+{% include /header-home.html %}
+
+{% include /header-top-line.html %}
+
+<main>
+
+
+	<section class="article-content">
+
+		<div class="container">
+			<div class="columns">
+				<div class="column is-9-widescreen is-8-tablet">
+
+					<div class="article-body">
+
+						<div id="cse-search-results"></div>
+						<script type="text/javascript">
+							var googleSearchIframeName = "cse-search-results";
+							var googleSearchFormName = "cse-search-box";
+							var googleSearchFrameWidth = 800;
+							var googleSearchDomain = "www.google.ru";
+							var googleSearchPath = "/cse";
+						</script>
+						<script type="text/javascript" src="https://www.google.com/afsonline/show_afs_search.js"></script>
+					</div>
+
+				</div>
+
+				<aside class="column is-3-widescreen is-4-tablet">
+
+{% include /search-aside.html %}
+
+				</aside>
+
+			</div>
+		</div>
+
+	</section><!-- /.article-content -->
+
+
+</main>
+
+{% include footer.html %}

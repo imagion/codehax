@@ -1,0 +1,92 @@
+---
+layout: post
+title: Самая важная особенность JavaScript
+description: Да, важнее, чем подъем, замыкания и область видимости
+categories: coding
+catname: Кодинг
+image: "coding/samaya-vazhnaya-osobennost-javascript/1.jpg"
+thumb: "coding/samaya-vazhnaya-osobennost-javascript/1t.jpg"
+og: "coding/samaya-vazhnaya-osobennost-javascript/1og.jpg"
+lqip: "coding/samaya-vazhnaya-osobennost-javascript/1s.jpg"
+latest: "coding/samaya-vazhnaya-osobennost-javascript/1lp.jpg"
+permalink: "blog/:categories/:year-:month-:day-:slug.html"
+---
+
+<p>Да, важнее, чем подъем, замыкания и область видимости</p>
+
+<p>Наиболее важной особенностью JavaScript является то, что функции являются объектами.</p>
+
+<p>Вот и все. Понимание этого открывает совершенно новое понимание языка JavaScript. В JavaScript функции являются объектами. А в JavaScript объекты имеют свойства, состоящие из пар ключ-значение. А именно, функции JavaScript имеют свойства, которые состоят из пар ключ-значение.</p>
+
+<p>Точно так же, как массивы (также объекты JavaScript) имеют свойство prototype, к которому могут быть присоединены уникальные методы (например, <code>Array.prototype.filter&nbsp;()</code>), функции также имеют свойство prototype. Среди свойств <code>Function.prototype</code> есть уникальные свойства, которые дают код функции, который может быть вызван (например,суть вашей функции). Но исполняемый код не является единственным свойством функции.</p>
+
+<p>Возможно, вы сталкивались с методами <code>.apply</code>, <code>.bind</code> и <code>.call</code>. Эти методы, как и следовало ожидать, являются методами в свойстве <code>Function.prototype</code>. <code>Function.prototype</code> также имеет свои собственные свойства, такие как <code>.name</code>, который содержит имя функции, и <code>.length</code>, который содержит число аргументов, ожидаемых функцией.</p>
+
+<h3>Почему это важно и как оно используется?</h3>
+
+<p>Возможно, вы слышали, что JavaScript описан как <em>функциональный язык</em>. Это означает, что в программах на JavaScript строятся функции.</p>
+
+<p>Функции считаются <em>первоклассными</em>, что означает, что функции могут делать что угодно - передаваться в качестве аргументов другим функциям, вставляться в структуры данных, присваиваться переменным и возвращаться другими функциями.</p>
+
+<h4>Вот несколько примеров, которые показывают, что функции JavaScript на самом деле являются просто объектами</h4>
+
+<p>Скажем, мы присваиваем функцию переменной <code>myFunction</code>:</p>
+
+<pre>var myFunction = function (str) { console.log(str) }</pre>
+
+<p>Мы можем получить доступ к свойству <code>name</code> функции так же, как к свойству в любом объекте:</p>
+
+<pre>
+myFunction[“name”]
+myFunction.name
+
+// both return “myFunction”
+</pre>
+
+<p>Аналогично, мы можем получить доступ к свойству <code>length</code> функции, которое возвращает количество аргументов, которые принимает функция:</p>
+
+<pre>
+myFunction[“length”]
+myFunction.length
+
+// both return 1
+// because myFunction takes in one argument, str
+</pre>
+
+<p>Мы также можем назначить новые свойства функции — так же, как вы бы назначали свойства любому другому объекту JavaScript:</p>
+
+<pre>
+myFunction.myNewProperty = "hello"
+
+myFunction.myNewProperty
+// returns "hello"
+</pre>
+
+<p>А поскольку функции в JavaScript являются первоклассными гражданами, мы можем делать с ними практически все, включая назначение других функций в качестве свойств функций.</p>
+
+<pre>
+var coolFunc = function() { return 1 }
+myFunction.coolProperty = coolFunc
+
+myFunction.coolProperty
+// returns function() { return 1 }
+
+myFunction.coolProperty()
+// returns 1
+</pre>
+
+<p>Хотя вы, возможно, никогда не захотите назначать функцию как свойство другой функции на практике, этот простой пример иллюстрирует эту концепцию.</p>
+
+<p>Функции - это просто объекты JavaScript, и, как следует, все, что вы можете сделать с объектом в JavaScript, вы можете сделать с помощью функции.</p>
+
+<p>Единственная реальная разница с функциями заключается в том, что они, наряду с другими объектами в JavaScript, имеют свои собственные уникальные методы и свойства, один из которых - это метод, который содержит исполняемый код функции, а другой - тот, который вызывает этот исполняемый код.</p>
+
+<p>Заключение</p>
+
+<p>Так что давайте, попробуйте.</p>
+
+<p>Поиграйте с объектами так же, как и с простым написанным объектом <code>{key: “value”}</code>.</p>
+
+<p>Вы будете удивлены тем, что вы можете сделать, и, в свою очередь, познакомитесь с мощностью, которую, глядя на функции таким образом, можно создать.</p>
+
+<p class="source">Перевод статьи <a href="https://medium.com/better-programming/the-single-most-important-feature-of-javascript-d65ae448eb19" target="_blank">&laquo;The Single Most Important Feature of JavaScript&raquo;</a></p>

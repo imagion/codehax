@@ -1,0 +1,19 @@
+<section class="technology">
+	<div class="s-title-wrap">
+		<h2 class="title"><a href="blog/technology/">Технологии</a></h2>
+		<a href="blog/technology/" class="view-all">Посмотреть все</a>
+	</div>
+	<div class="technology-post-wrap">
+		<div class="columns is-gapless">
+{% for post in site.categories.technology limit: 1 offset: 0 %}
+{% include /home-coding-technology-item-1.html %}
+{% endfor %}
+			<div class="column is-7">
+				<div class="columns is-multiline is-gapless">
+{% for post in site.categories.technology limit: 4 offset: 1 %}
+{% include /home-coding-technology-item-2.html %}
+{% endfor %}
+			</div>
+		</div>
+	</div>
+</section><!-- /.technology -->

@@ -1,0 +1,108 @@
+---
+layout: post
+title: Руководство по оптимизации веб-производительности
+description: Веб-производительность — сложная тема. Есть много факторов, которые могут замедлить загрузку страницы. В этой статье я хочу сосредоточиться на одном конкретном аспекте
+categories: webdesign
+catname: Веб-дизайн
+image: "webdesign/rukovodstvo-po-optimizacii-veb-proizvoditelnosti/1.jpg"
+thumb: "webdesign/rukovodstvo-po-optimizacii-veb-proizvoditelnosti/1t.jpg"
+og: "webdesign/rukovodstvo-po-optimizacii-veb-proizvoditelnosti/1og.jpg"
+lqip: "webdesign/rukovodstvo-po-optimizacii-veb-proizvoditelnosti/1s.jpg"
+latest: "webdesign/rukovodstvo-po-optimizacii-veb-proizvoditelnosti/1lp.jpg"
+permalink: "blog/:categories/:year-:month-:day-:slug.html"
+---
+
+<h2>Часть 1. Оптимизация изображений</h2>
+
+<p>Веб-производительность — сложная тема. Есть много факторов, которые могут замедлить загрузку страницы. В этой статье я хочу сосредоточиться на одном конкретном аспекте — изображениях.</p>
+
+<p>Изображения по-прежнему являются причиной номер один в Интернете. Загрузка изображений забирает огромное количество трафика, потому что файлы часто большого размера.</p>
+
+<blockquote>Согласно <a href="http://httparchive.org/" target="_blank">HTTP archive</a>, 60% данных, передаваемых для веб-страницы, составляют изображения, формата JPEG, PNG и GIF.</blockquote>
+
+<p>Оптимизация изображений может значительно сократить время загрузки веб-страницы, что приведет к улучшению удовлетворенности пользователей.</p>
+
+<h3>Как определить, нужно ли мне оптимизировать изображения?</h3>
+
+<p>Проведите аудит сайта с помощью <a href="https://webspeedtest.cloudinary.com/" target="_blank">Website Speed Test Image Analysis Tool</a>, и вы сможете лучше оптимизировать ваши изображения.</p>
+
+<figure>
+	<img src="img/webdesign/rukovodstvo-po-optimizacii-veb-proizvoditelnosti/2.png" alt="Результат анализа изображений">
+	<figcaption>Результаты анализа изображений для Medium.</figcaption>
+</figure>
+
+<p>Теперь обсудим реальные правила:</p>
+
+<h3>1. Уменьшите общее количество изображений на странице</h3>
+
+<p>По данным Google, изображения являются вторым по величине показателем конверсии. Во многих случаях можно отследить прямую связь между количеством изображений на странице и временем загрузки.
+</p>
+
+<figure>
+	<img src="img/webdesign/rukovodstvo-po-optimizacii-veb-proizvoditelnosti/3.png" alt="Меньше изображений — больше конверсия">
+	<figcaption>Источник: <a href="https://www.thinkwithgoogle.com/marketing-resources/experience-design/mobile-page-speed-load-time/" target="_blank">исследование Google</a> от 2016 года</figcaption>
+</figure>
+
+<h3>2. Сжимайте изображения</h3>
+
+<p>Чем меньше размер изображений вы сможете сделать, тем лучше соединение вы сможете предложить своим пользователям. <a href="https://squoosh.app/" target="_blank">Squoosh</a> поможет вам оптимизировать изображения до оптимального уровня сжатия. Этот инструмент может значительно уменьшить размер изображений при сохранении визуального качества.
+</p>
+
+<figure>
+	<img src="img/webdesign/rukovodstvo-po-optimizacii-veb-proizvoditelnosti/4.png" alt="Оптимизация Squoosh">
+	<figcaption>Использование <a href="https://squoosh.app/" target="_blank">Squoosh</a> для оптимизации изображений</figcaption>
+</figure>
+
+<h3>3. Уменьшите размер файлов PNG, JPEG и SVG.</h3>
+
+<p>Оптимизация изображений в плане форматов:</p>
+
+<ul>
+	<li><em>JPEG.</em> Запустите свои JPEG через <a href="https://github.com/mozilla/mozjpeg" target="_blank">MozJPEG</a> или <a href="https://github.com/google/guetzli" target="_blank">Guetzli</a>. Mozilla <a href="https://research.mozilla.org/2014/03/05/introducing-the-mozjpeg-project/" target="_blank">заявляет</a>, что может сэкономить до 10% файлов JPEG.</li>
+	<li><em>PNG.</em> <a href="http://css-ig.net/pingo" target="_blank">Pingo</a> может помочь вам с оптимизацией PNG.</li>
+	<li><em>SVG.</em> Используйте <a href="https://www.npmjs.com/package/svgo" target="_blank">SVGO</a> для вашей векторной графики.</li>
+</ul>
+
+<div class="ad-article">
+{% include /ad-type-article.html %}
+</div>
+
+<h3>4. Правильный размер изображений</h3>
+
+<p>Изменение размера изображений — дорогостоящая операция для браузера (особенно на мобильных девайсах). Таким образом, попытайтесь уменьшить ненужные затраты на изменение размера изображения. Используйте <a href="https://www.responsivebreakpoints.com/" target="_blank">Responsive Image Breakpoints Generator</a> для создания изображений правильного размера.</p>
+
+<img src="img/webdesign/rukovodstvo-po-optimizacii-veb-proizvoditelnosti/5.jpg" alt="Оптимизация разрешения">
+
+<p>В идеале, вы должны автоматизировать эту операцию. Сервисы <a href="https://cloudinary.com/" target="_blank">Cloudinary</a> или <a href="https://www.imgix.com/" target="_blank">Imgix</a> могут помочь вам в этом.</p>
+
+<p>Проверьте эффективность своей отзывчивой разметки, используя <a href="https://github.com/filamentgroup/imaging-heap" target="_blank">imaging-heap</a>. Это простой инструмент командной строки, который покажет вам эффективность по размерам области просмотра и соотношению пикселей устройства.</p>
+
+<figure>
+	<img src="img/webdesign/rukovodstvo-po-optimizacii-veb-proizvoditelnosti/6.png" alt="Оптимизация разрешения">
+	<figcaption>результат imaging-heap</figcaption>
+</figure>
+
+<h3>5. Удалите неиспользуемые изображения</h3>
+
+<p>Убедитесь, что очистили неиспользованные файлы. Вы можете отслеживать такие изображения с помощью поиска свойства <em>display: none</em> в вашем CSS.</p>
+
+<p>Также отслеживайте изображения, которые загружаются по умолчанию, но могут никогда не отображаться (например, изображения в карусели).</p>
+
+<h3>6. Lazy loading</h3>
+
+<p>Lazy loading — это шаблон производительности в Интернете, который задерживает загрузку изображений в браузере до тех пор, пока пользователь не увидит его. Обычно загрузка изображения запускается при прокрутке — изображения загружаются асинхронно, когда пользователь достигает соответствующей части страницы. Этот метод обычно используется на многих содержательных веб-сайтах, таких как Medium.
+</p>
+
+<img src="img/webdesign/rukovodstvo-po-optimizacii-veb-proizvoditelnosti/7.jpg" alt="Lazy loading">
+
+<p>Lazy loading пока не поддерживается в самом браузере. Но можно использовать библиотеки JavaScript, чтобы добавить эту возможность. Для этого вы можете использовать <a href="https://github.com/aFarkas/lazysizes" target="_blank">lazysizes</a> или <a href="https://github.com/malchata/yall.js" target="_blank">yall.js</a>.</p>
+
+<h3>7. Избавьтесь от тяжелых GIF</h3>
+
+<p>Использование анимированных GIF-файлов в макете страницы создает проблемы как с производительностью рендеринга, так и с пропускной способностью. Вместо добавления огромных анимированных GIF-файлов, попробуйте использовать видео <a href="https://en.wikipedia.org/wiki/AV1" target="_blank">AV1</a> или <a href="https://www.webmproject.org/" target="_blank">WebM</a>.</p>
+
+<h3>8. Выберите CDN</h3>
+
+<p>В зависимости от того, сколько у вас изображений, вам стоит отправить их в CDN. Но проверьте сначала, выполняет ли ваш CDN сжатие и преобразование.</p>
+
+<p class="source">Перевод статьи <a href="https://uxplanet.org/essential-guide-for-web-performance-optimization-1b883d638a1" target="_blank">&laquo;Essential Guide for Web Performance Optimization&raquo;</a></p>

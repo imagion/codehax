@@ -1,0 +1,58 @@
+<footer>
+	<div class="footer-top navbar">
+		<div class="container">
+			<div class="navbar-start">
+				<a href="{{ baseurl }}" class="footer-logo">code<span>haX</span></a>
+				<nav class="main-navigation" role="navigation" aria-label="main navigation">
+{% include /main-menu.html %}
+				</nav>
+
+			</div>
+			<div class="navbar-end">
+				<div class="social">
+{{ site.soc }}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-bottom navbar">
+		<div class="container">
+			<div class="copyrights">
+				<p>&copy;{{ site.time | date: '%Y'}} codehaX</p>
+				<p>{{ site.copyrights }}</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="/js/scripts.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script id="dsq-count-scr" src="//codehax.disqus.com/count.js" async></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154575310-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154575310-1');
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(55607671, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/55607671" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body>
+
+</html>

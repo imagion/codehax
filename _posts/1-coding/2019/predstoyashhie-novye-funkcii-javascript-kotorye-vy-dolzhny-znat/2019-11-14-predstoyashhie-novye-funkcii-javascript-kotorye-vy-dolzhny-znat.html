@@ -1,0 +1,217 @@
+---
+layout: post
+title: Предстоящие новые функции JavaScript, которые Вы должны знать, если используете JavaScript каждый день
+description: Вы, вероятно, не заметили, какие функции были добавлены в последней версии ECMAScript, выпущенной в июне 2019 года. Я кратко покажу вам новые функции, добавленные в
+categories: coding
+catname: Кодинг
+image: "coding/predstoyashhie-novye-funkcii-javascript-kotorye-vy-dolzhny-znat/1.jpg"
+thumb: "coding/predstoyashhie-novye-funkcii-javascript-kotorye-vy-dolzhny-znat/1t.jpg"
+og: "coding/predstoyashhie-novye-funkcii-javascript-kotorye-vy-dolzhny-znat/1og.jpg"
+lqip: "coding/predstoyashhie-novye-funkcii-javascript-kotorye-vy-dolzhny-znat/1s.jpg"
+latest: "coding/predstoyashhie-novye-funkcii-javascript-kotorye-vy-dolzhny-znat/1lp.jpg"
+permalink: "blog/:categories/:year-:month-:day-:slug.html"
+---
+
+<p>С момента выпуска ECMAScript2015 (также называемого ES6) JavaScript изменился и значительно улучшился. Это отличная новость для всех разработчиков JavaScript. Кроме того, новая версия ECMAScript выпускается каждый год. Вы, вероятно, не заметили, какие функции были добавлены в последней версии ECMAScript, выпущенной в июне 2019 года. Я кратко покажу вам новые функции, добавленные в последней версии, и расскажу о новых функциях для будущей версии.</p>
+
+<blockquote>
+<strong>Оговорка</strong>
+<p>Функции, которые я покажу вам, еще НЕ утверждены для следующей версии. Все, о чем я расскажу в этом посте, в настоящее время находится на этапе 3. Посмотрите <a href="https://github.com/tc39/proposals">этот репозиторий</a>, если вы хотите получить более подробную информацию.</p>
+</blockquote>
+
+<h3>Особенности в ECMAScript2019 (ES10)</h3>
+
+<h4>1. Array.prototype.flat</h4>
+<p>Метод, который создает новый массив со всеми элементами вложенного массива, рекурсивно объединенными в него до заданной глубины.</p>
+
+<pre>
+const array = [1, 2, [3, 4]];
+array.flat(); // [1, 2, 3, 4];
+</pre>
+
+<p>Это очень полезно, особенно если вы хотите выровнять вложенный массив. Если глубина вашего массива больше, чем на одну глубину, однократный вызов <code>flat</code> не может полностью сгладить ваш массив. <code>flat</code> принимает параметр для глубины, который указывает, на сколько глубин вы хотите, чтобы он сгладил массив.</p>
+
+<pre>
+// Crazy example
+const crazyArray = [1, 2, [3, 4], [[5], [6, [7,8]]]];
+crazyArray.flat(Infinity); // [1, 2, 3, 4, 5, 6, 7, 8];
+
+// The parameter must be the number type
+</pre>
+
+<p>Чем глубже вы собираетесь искать в массиве, тем больше вычислительного времени потребуется для его выравнивания. Обратите внимание, что IE и Edge не поддерживают эту функцию.</p>
+
+<h4>2. Array.prototype.flatMap</h4>
+
+<p>Метод сначала представляет каждый элемент с помощью функции отображения, а затем выравнивает результат в новый массив.</p>
+
+<pre>
+const arr = ["it's Sunny in", "", "California"];
+
+arr.flatMap(x => x.split(" "));
+// ["it's","Sunny","in", "", "California"]
+</pre>
+
+<p>Разница между <code>flat</code> и <code>flatMap</code> заключается в том, что вы можете поместить в <code>flatMap</code> пользовательскую функцию для управления каждым значением. Кроме того, в отличие от <code>flat</code>, <code>flatMap</code> выравнивает только один массив глубин. Возвращаемое значение должно быть типом массива. Это может быть очень полезно, когда вы должны что-то сделать перед выравниванием массива.</p>
+
+<p>В ES10 было добавлено больше возможностей. <a href="https://devinduct.com/blogpost/48/8-new-es10-es2019-features-by-example">Нажмите здесь</a>, если вы хотите узнать больше о них.</p>
+
+<h3>Новые функции на этапе 3</h3>
+
+<p>На этапе 3 предлагается несколько интересных функций. Я кратко представлю вам некоторые из них.</p>
+
+<h4>Числовые разделители</h4>
+<p>Когда вы присваивали переменной большое число, вас не смущало, насколько велико это число или вы правильно его написали? Это предложение позволяет вам ставить нижнее подчеркивание между числами, чтобы вам было проще считать его.</p>
+
+<pre>
+1_000_000_000           // Ah, so a billion
+101_475_938.38          // And this is hundreds of millions
+
+let fee = 123_00;       // $123 (12300 cents, apparently)
+let fee = 12_300;       // $12,300 (woah, that fee!)
+let amount = 12345_00;  // 12,345 (1234500 cents, apparently)
+let amount = 123_4500;  // 123.45 (4-fixed financial)
+let amount = 1_234_500; // 1,234,500
+
+let budget = 1_000_000_000_000;
+
+// What is the value of `budget`? It's 1 trillion!
+//
+// Let's confirm:
+console.log(budget === 10 ** 12); // true
+</pre>
+
+<p>Каждый разработчик будет сам решать, использовать ли эту функцию после ее выпуска, но одно можно сказать наверняка, эта функция уменьшит ваши головные боли при подсчете больших чисел!</p>
+
+<h4>Await высшего уровня</h4>
+
+<blockquote>
+<p><code>await</code> высшего уровня позволяет модулям выступать в качестве больших асинхронных функций: С <code>await</code> высшего уровня модули ECMAScript могут <code>ожидать</code> источники, заставляя другие модули, <code>импортирующие</code> их, ждать, прежде чем они начнут анализировать свое тело.</p>
+</blockquote>
+
+<p>Мотивация этой функции заключалась в том, что при <code>импорте</code> модуля с <code>асинхронной</code> функцией, вывод <code>асинхронной</code> функции <code>не определен</code>.</p>
+
+<pre>
+// awaiting.mjs
+import { process } from "./some-module.mjs";
+const dynamic = import(computedModuleSpecifier);
+const data = fetch(url);
+export const output = process((await dynamic).default, await data);
+</pre>
+
+<p>Есть два файла. <code>вывод</code> может быть <code>неопределенным</code>, если он вызывается до выполнения задач Promises.</p>
+
+<pre>
+// usage.mjs
+import { output } from "./awaiting.mjs";
+export function outputPlusValue(value) { return output + value }
+
+console.log(outputPlusValue(100));
+setTimeout(() => console.log(outputPlusValue(100), 1000);
+</pre>
+
+<p><code>usage.mjs</code> не выполнит ни одного из утверждений в нем, пока <code>ожидающие</code> в <code>awaiting.mjs</code> не выполнят свои Promises.</p>
+
+<p>Nullish Coalescing для JavaScript</p>
+<p>Это стало бы одной из самых полезных функций среди предложений на этапе 3. Мы часто писали такой код.</p>
+
+<pre>
+const obj = {
+  name: 'James'
+};
+
+const name = obj.name || 'Jane'; // James
+</pre>
+
+<p>Если <code>obj.name</code> ложно, верните ‘Jane’, поэтому <code>undefined</code> не будет возвращено. Но проблема в том, что пустая строка (<code>‘’</code>) также считается ложной в этом случае. Затем мы должны переписать это снова, как показано ниже.</p>
+
+<pre>const name = (obj.name && obj.name !== '') ? obj.name : 'Jane';</pre>
+
+<p>Это кость в горле, которую приходится писать каждый раз. Это предложение позволяет вам проверять только <code>null</code> и <code>undefined</code>.</p>
+
+<pre>
+const response = {
+  settings: {
+    nullValue: null,
+    height: 400,
+    animationDuration: 0,
+    headerText: '',
+    showSplashScreen: false
+  }
+};
+
+const undefinedValue = response.settings.undefinedValue ?? 'some other default'; // result: 'some other default'
+const nullValue = response.settings.nullValue ?? 'some other default'; // result: 'some other default'
+const headerText = response.settings.headerText ?? 'Hello, world!'; // result: ''
+const animationDuration = response.settings.animationDuration ?? 300; // result: 0
+const showSplashScreen = response.settings.showSplashScreen ?? true; // result: false
+</pre>
+
+<p>Optional Chaining</p>
+<p>Это предложение идет с <em>Nullish Coalescing для JavaScript</em>, особенно в TypeScript. <a href="https://github.com/Microsoft/TypeScript/issues/16">TypeScript объявил</a>, что они включат <em>Nullish Coalescing для JavaScript</em> и это предложение в свою следующую выпущенную версию, 3.7.0.</p>
+
+<pre>
+const city = country && country.city;
+// undefined if city doesn't exist
+</pre>
+
+<p>Посмотрите на пример кода. Чтобы получить <code>city</code>, который находится в объекте <code>country</code>, мы должны проверить, существует ли <code>country</code> и существует ли <code>city</code> в <code>country</code>.</p>
+
+<p>С помощью <em>Optional Chaining</em> этот код может быть реорганизован следующим образом.</p>
+
+<pre>
+const city = country?.city; // undefined if city doesn't exist
+</pre>
+
+<p>Эта функция кажется очень удобной и полезной для этой ситуации.</p>
+
+<pre>
+import { fetch } from '../yourFetch.js';
+
+(async () => {
+  const res = await fetch();
+
+  // res && res.data && res.data.cities || undefined
+  const cities = res?.data?.cities;
+})();
+</pre>
+
+<p>Promise.any</p>
+
+<blockquote>
+<p><code>Promise.any</code> принимает итерацию обещаний и возвращает обещание, которое выполняется первым данным обещанием, которое должно быть выполнено, или отклоняется с массивом причин отказа, если все данные обещания отклоняются.</p>
+</blockquote>
+
+<p>С асинхронным ожиданием,</p>
+
+<pre>
+try {
+  const first = await Promise.any(promises);
+  // Any of the promises was fulfilled.
+} catch (error) {
+  // All of the promises were rejected.
+}
+</pre>
+
+<p>С моделью Promise,</p>
+
+<pre>
+Promise.any(promises).then(
+  (first) => {
+    // Any of the promises was fulfilled.
+  },
+  (error) => {
+    // All of the promises were rejected.
+  }
+);
+</pre>
+
+<p>Так как есть Promise <code>all</code>, <code>allSettled</code> и <code>race</code>, не было ничего <code>any</code>. Так что эта функция проста, но мощна для необходимой ситуации.</p>
+
+<p>Однако это предложение еще не было протестировано, поэтому принятие этого предложения может занять больше времени в будущей версии ECMAScript.</p>
+
+<p>Заключение</p>
+
+<p>На этапе 3 так много интересных предложений. Я не могу дождаться встречи с ними на ES11 или ES12. Конечно, они мне не понадобятся, но некоторые из них определенно сделают мои коды более элегантными.</p>
+
+<p class="source">Перевод статьи <a href="https://medium.com/javascript-in-plain-english/upcoming-new-javascript-features-you-should-know-if-you-use-javascript-everyday-8208b477b7a2" target="_blank">&laquo;Upcoming new JavaScript features You should know if you use JavaScript everyday&raquo;</a></p>

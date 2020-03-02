@@ -1,0 +1,94 @@
+{% include /header-post.html %}
+
+{% include /header-top-line.html %}
+
+<main>
+
+	<div class="page-header overlay" style="background-image: url(img/{{ page.image }})">
+		<div class="page-header-content">
+			<div class="container">
+				<div class="columns">
+					<div class="column is-9-widescreen is-8-tablet">
+						<div class="page-header-meta">
+
+							<a href="/{{ site.category_dir }}/{{ page.categories }}" class="page-category-link">{{ page.catname }}</a>
+							<h1 class="title">{{ page.title }}</h1>
+
+							<div class="post-meta">
+								<span class="post-date">{{ page.date | date: "%d.%m.%Y" }}</span>
+								<span class="icon"><i class="fas fa-comments"></i></span>
+								<a href="{{ page.url }}#disqus_thread" class="post-comments" title="Количество комментариев"></a>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="article-content">
+		<div class="container">
+			<div class="columns">
+				<div class="column is-8-desktop">
+					<article class="main-article">
+
+						<nav class="breadcrumb" aria-label="breadcrumbs">
+							<ul>
+								<li><a href="{{ site.baseurl }}">Главная</a></li>
+								<li><a href="{{ site.category_dir }}/{{ page.categories }}">{{ page.catname }}</a></li>
+								<li class="is-active"><a href="#" aria-current="page">{{ page.title }}</a></li>
+							</ul>
+						</nav>
+
+						<div class="article-body">
+
+
+{{ content }}
+
+						</div>
+
+						<div class="likely-on-page">
+							<div class="likely" data-url="{{ site.url }}{{ page.url }}" data-media="{{ page.image }}" data-title="{{ page.title }}">
+								<div class="vkontakte" title="Поделиться Вконтакте">Вконтакте</div>
+								<div class="facebook" title="Поделиться в Facebook">Facebook</div>
+								<div class="twitter" title="Поделиться в Twitter">Twitter</div>
+								<div class="odnoklassniki" title="Поделиться в ОК">Однокласснки</div>
+							</div>
+						</div>
+
+						<div class="ad article-top-ad">
+{% include /ad-type-horiz.html %}
+						</div>
+
+						<div class="read-more">
+							<div class="read-more-header">Читать еще:</div>
+							<ul>
+								{% capture related_posts %}{{ page.categories }}{% endcapture %}
+								{% assign collection = site.categories[related_posts] %}
+								{% for article in collection limit: 6 %}
+									{% unless page.url == article.url %}
+									<li><a href="{{ article.url }}">{{ article.title }}</a></li>
+									{% endunless %}
+								{% endfor %}
+							</ul>
+						</div>
+
+						<div class="disqus-placeholder">Loading comments...</div>
+						<div class="comments">
+
+{% include /comments.html %}
+
+						</div>
+
+					</article>
+				</div>
+				<div class="column is-3-widescreen is-4-tablet">
+{% include /main-aside.html %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+</main>
+{% include /footer.html %}

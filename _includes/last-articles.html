@@ -1,0 +1,79 @@
+<section class="latest-box">
+
+	<div class="lb-header">Последние статьи:</div>
+
+	<div class="lb-list">
+
+		<div class="lb-item">
+			<div class="lb-thumb">
+				{% for post in site.categories.coding limit: 1 offset: 0 %}
+				<a class="lb-item-header" href="{{ post.url }}"><img src="img/{{ post.latest }}" alt="{{ post.title }}"></a>
+				{% endfor %}
+			</div>
+			<div class="lb-body">
+				<a href="blog/coding/" class="lb-catname">Кодинг</a>
+				{% for post in site.categories.coding limit: 1 offset: 0 %}
+				<a class="lb-item-header" href="{{ post.url }}">{{ post.title }}</a>
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="lb-item">
+			<div class="lb-thumb">
+				{% for post in site.categories.webdesign limit: 1 offset: 0 %}
+				<a class="lb-item-header" href="{{ post.url }}"><img src="img/{{ post.latest }}" alt="{{ post.title }}"></a>
+				{% endfor %}
+			</div>
+			<div class="lb-body">
+				<a href="blog/webdesign/" class="lb-catname">Веб-дизайн</a>
+				{% for post in site.categories.webdesign limit: 1 offset: 0 %}
+				<a class="lb-item-header" href="{{ post.url }}">{{ post.title }}</a>
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="lb-item">
+			<div class="lb-thumb">
+				{% for post in site.categories.graphic limit: 1 offset: 0 %}
+				<a class="lb-item-header" href="{{ post.url }}"><img src="img/{{ post.latest }}" alt="{{ post.title }}"></a>
+				{% endfor %}
+			</div>
+			<div class="lb-body">
+				<a href="blog/graphic/" class="lb-catname">Графика</a>
+				{% for post in site.categories.graphic limit: 1 offset: 0 %}
+				<a class="lb-item-header" href="{{ post.url }}">{{ post.title }}</a>
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="lb-item">
+			<div class="lb-thumb">
+				{% for post in site.categories.technology limit: 1 offset: 0 %}
+				<a class="lb-item-header" href="{{ post.url }}"><img src="img/{{ post.latest }}" alt="{{ post.title }}"></a>
+				{% endfor %}
+			</div>
+			<div class="lb-body">
+				<a href="blog/technology/" class="lb-catname">Технологии</a>
+				{% for post in site.categories.technology limit: 1 offset: 0 %}
+				<a class="lb-item-header" href="{{ post.url }}">{{ post.title }}</a>
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="lb-item">
+			<div class="lb-thumb">
+				{% for post in site.categories.cms limit: 1 offset: 0 %}
+				<a class="lb-item-header" href="{{ post.url }}"><img src="img/{{ post.latest }}" alt="{{ post.title }}"></a>
+				{% endfor %}
+			</div>
+			<div class="lb-body">
+				<a href="blog/cms/" class="lb-catname">CMS</a>
+				{% for post in site.categories.cms limit: 1 offset: 0 %}
+				<a class="lb-item-header" href="{{ post.url }}">{{ post.title }}</a>
+				{% endfor %}
+			</div>
+		</div>
+
+	</div>
+
+</section>

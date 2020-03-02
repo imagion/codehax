@@ -1,0 +1,30 @@
+<section class="cms">
+
+	<div class="container">
+		<div class="columns">
+			<div class="column is-9-widescreen is-8-tablet">
+
+				<div class="s-title-wrap">
+					<h2 class="title"><a href="blog/cms/">CMS</a></h2>
+					<a href="blog/cms/" class="view-all">Посмотреть все</a>
+				</div>
+
+{% for post in site.categories.cms limit: 5 offset: 0 %}
+{% include /home-cms-item.html %}
+{% endfor %}
+
+			</div>
+
+			<aside class="column is-3-widescreen is-4-tablet">
+
+				<div class="ad-side">
+{% include /ad-type-side-vert.html %}
+				</div>
+
+			</aside>
+		</div>
+	</div>
+
+</section><!-- /.cms -->
+
+</main>

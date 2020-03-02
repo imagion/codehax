@@ -1,0 +1,108 @@
+---
+layout: post
+title: Как понять CSS Position Absolute раз и навсегда
+description: Хватит терять свои элементы на экране, понимая, как объект себя поведет и где он должен находиться. Абсолютное позиционирование элемента больше связано
+categories: coding
+catname: Кодинг
+image: "coding/kak-ponyat-css-position-absolute-raz-i-navsegda/1.gif"
+thumb: "coding/kak-ponyat-css-position-absolute-raz-i-navsegda/1t.png"
+og: "coding/kak-ponyat-css-position-absolute-raz-i-navsegda/1og.png"
+lqip: "coding/kak-ponyat-css-position-absolute-raz-i-navsegda/1s.jpg"
+latest: "coding/kak-ponyat-css-position-absolute-raz-i-navsegda/1lp.png"
+permalink: "blog/:categories/:year-:month-:day-:slug.html"
+---
+
+<blockquote>Первый параграф статьи</blockquote>
+
+<h2>Хватит терять элементы на экране, поняв, как объект себя поведет и где он должен находиться</h2>
+
+<p>Абсолютное позиционирование элемента больше связано с позицией контейнера элемента, чем с его собственной. Чтобы иметь возможность позиционировать элемент, нужно знать, к какому родительскому div он относится.</p>
+
+<p>Код ниже показывает четыре вложенных div. От <code>.box-1</code> до <code>.box-3</code> отцентрованы с помощью <code>display: flex</code> и <code>margin: auto</code>. у <code>.box-4</code> нет <code>margin</code> и он находится в позиции по умолчанию в потоке документов.</p>
+
+<pre>
+&lt;body&gt;
+  &lt;div class="box-1"&gt;
+    &lt;div class="box-2"&gt;
+      &lt;div class="box-3"&gt;
+        &lt;div class="box-4"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+</pre>
+
+<p><code>position</code> не задана для всех элементов</p>
+
+<pre>
+body {
+  display: flex;
+}
+.box-1,
+.box-2,
+.box-3 {
+  display: flex;
+  margin: auto;
+}
+</pre>
+
+<figure>
+  <img src="img/coding/kak-ponyat-css-position-absolute-raz-i-navsegda/2.jpg" alt="Стандартная позиция .box4">
+  <figcaption>Стандартная позиция .box4</figcaption>
+</figure>
+
+<div class="ad-article">
+{% include /ad-type-article.html %}
+</div>
+
+<p>Чтобы иметь возможность позиционировать себя, элемент должен знать две вещи:</p>
+
+<ul>
+  <li>координаты для его <code>x</code> и <code>y</code> позиции, установленной с помощью <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code></li>
+  <li>относительно какого родителя он будет позиционироваться</li>
+</ul>
+
+<p>При применении <code>position: absolute</code> к <code>.box-4</code> элемент удаляется из <code><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow" target="_blank">базового потока документов</a></code>. Так как его координаты не установлены, он просто остается в положении по умолчанию, которое является его родительский div в верхнем левом углу.</p>
+
+<figure>
+	<img src="img/coding/kak-ponyat-css-position-absolute-raz-i-navsegda/3.jpg" alt=".box-4 position absolute без отступа">
+	<figcaption>.box-4 position absolute без отступа.</figcaption>
+</figure>
+
+<p>Устанавливая <code>top:&nbsp;0</code> и <code>left:&nbsp;0</code>, элемент должен знать, какой родительский элемент он будет рассматривать за контрольную точку. Чтобы быть контрольной точкой, элемент должен быть расположен на экране с <code>position: relative</code>. Затем <code>.box-4</code> начинает спрашивать родительские элементы div, есть ли у них такая позиция. Сначала он спрашивает <code>.box-3</code> и получает  в ответ: <code>«Нет, я не позиционирован»</code>. То же самое касается <code>.box-2</code> и затем <code>.box-1</code>, так как у всех <code>position: unset</code>.</p>
+
+<p>Так как <code>.box-4</code> не смог найти позиционированного родителя, он позиционируется относительно <code>body</code>. Этот элемент всегда расположен на экране:</p>
+
+<figure>
+	<img src="img/coding/kak-ponyat-css-position-absolute-raz-i-navsegda/4.jpg" alt=".box-4 position absolute без отступа">
+	<figcaption>.box-4 position absolute. Позиция родительских div не задана.</figcaption>
+</figure>
+
+<p>Если мы установим <code>position: relative</code> для <code>.box-1</code>, когда <code>.box-4</code> спросит его: <code>Вы позиционированы?</code> и получит <code>Да</code> в ответ. И тогда <code>.box-4</code> будет расположен относительно <code>.box-1</code>:</p>
+
+<figure>
+	<img src="img/coding/kak-ponyat-css-position-absolute-raz-i-navsegda/5.jpg" alt=".box-4 position absolute без отступа">
+	<figcaption>.box-4 position absolute. Позиция относительно .box1.</figcaption>
+</figure>
+
+<p>То же самое касается <code>.box-2</code> и <code>.box-3</code>.</p>
+
+<blockquote>Абсолютно позиционированный элемент будет позиционироваться относительно ближайшего позиционируемого предка.</blockquote>
+
+<p>Как только он находит позиционированного предка, положение элементов над ним перестает быть актуальным. На изображениях ниже показано расположение в <code>position: relative</code> <code>.box-2</code> и <code>.box-3</code>, соответственно:</p>
+
+<figure>
+	<div class="figure-wrap">
+		<img src="img/coding/kak-ponyat-css-position-absolute-raz-i-navsegda/6.jpg" alt=".box-4 position absolute без отступа">
+		<img src="img/coding/kak-ponyat-css-position-absolute-raz-i-navsegda/7.jpg" alt=".box-4 position absolute без отступа">
+	</div>
+	<figcaption>.box-4 position absolute. Позиция относительно .box2 и .box3 соответственно.</figcaption>
+</figure>
+
+<p>Вы также можете посмотреть небольшое видео с пояснением (на анг. языке):</p>
+
+<div class="video">
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/VFt_n4M9Vyk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<p class="source">Перевод статьи <a href="https://medium.freecodecamp.org/how-to-understand-css-position-absolute-once-and-for-all-b71ca10cd3fd" target="_blank">&laquo;How to understand CSS Position Absolute once and for all&raquo;</a></p>

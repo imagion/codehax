@@ -1,0 +1,34 @@
+<header class="top-line navbar is-flex-touch">
+	<div class="navbar-start">
+		<a href="{{ site.baseurl }}" class="logo">code<span>haX</span></a>
+	</div>
+	<div class="navbar-end">
+		<nav class="main-navigation" role="navigation" aria-label="main navigation">
+{% include /main-menu.html %}
+		</nav>
+		<div class="search-wrap">
+			<div class="search" title="Поиск по сайту...">
+				<span class="icon">
+					<i class="fas fa-search"></i>
+				</span>
+			</div>
+			<div class="search-field">
+				<form action="/search.html" id="cse-search-box">
+					<input type="hidden" name="cx" value="partner-pub-xxx:xxx" />
+					<input type="hidden" name="cof" value="FORID:10" />
+					<input type="hidden" name="ie" value="UTF-8" />
+					<input type="text" class="input" name="q" placeholder="Поиск по сайту..." />
+				</form>
+			</div>
+		</div><!-- /.search-wrap -->
+		<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
+		</a>
+	</div><!-- /.navbar-menu -->
+</header>
+
+<nav class="mobile-menu main-navigation" role="navigation" aria-label="main navigation">
+{% include /main-menu.html %}
+</nav>

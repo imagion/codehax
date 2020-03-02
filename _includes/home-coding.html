@@ -1,0 +1,20 @@
+<main class="main-s">
+	<div class="container">
+		<div class="top-ad">
+{% include /ad-type-horiz.html %}
+		</div>
+	</div>
+	<section class="coding">
+			<div class="columns is-gapless">
+{% for post in site.categories.coding limit: 1 offset: 0 %}
+{% include /home-coding-technology-item-1.html %}
+{% endfor %}
+				<div class="column is-7">
+					<div class="columns is-multiline is-gapless">
+{% for post in site.categories.coding limit: 4 offset: 1 %}
+{% include /home-coding-technology-item-2.html %}
+{% endfor %}
+					</div>
+				</div>
+			</div>
+	</section><!-- /.coding -->

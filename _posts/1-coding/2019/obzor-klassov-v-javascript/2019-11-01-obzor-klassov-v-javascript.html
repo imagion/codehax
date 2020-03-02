@@ -1,0 +1,344 @@
+---
+layout: post
+title: Обзор классов в JavaScript
+description: Классы JavaScript, представленные в ECMAScript 2015, в основном являются синтаксическим сахаром по сравнению с существующим наследованием JavaScript на основе прототипов.
+categories: coding
+catname: Кодинг
+image: "coding/obzor-klassov-v-javascript/1.jpg"
+thumb: "coding/obzor-klassov-v-javascript/1t.jpg"
+og: "coding/obzor-klassov-v-javascript/1og.jpg"
+lqip: "coding/obzor-klassov-v-javascript/1s.jpg"
+latest: "coding/obzor-klassov-v-javascript/1lp.jpg"
+permalink: "blog/:categories/:year-:month-:day-:slug.html"
+---
+
+<p>В этой статье я расскажу о <code>классах</code> в JavaScript. Мы рассмотрим следующие темы:</p>
+
+<ol>
+	<li>Основные классы</li>
+  <li>Поднятие (Hoisting)</li>
+  <li>Подклассы / Наследование</li>
+  <li>Миксины</li>
+  <li>Геттеры и сеттеры</li>
+</ol>
+
+<h3>Основные классы</h3>
+
+<p>Классы JavaScript, представленные в ECMAScript 2015, в основном являются синтаксическим сахаром по сравнению с существующим наследованием JavaScript на основе прототипов. Классы на самом деле просто <strong>специальная функция</strong>.</p>
+
+<p>Один из способов определить класс - использовать <strong>объявление</strong> <code>класса</code>.</p>
+
+<p>Пример:</p>
+
+<pre>
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+}
+</pre>
+
+<p><strong>Выражение класса</strong> - это еще один способ определить класс. Выражения класса могут быть именованными или безымянными.</p>
+
+<p>Пример:</p>
+
+<pre>
+// unnamed
+let Rectangle = class {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+};
+
+// named
+let Rectangle = class Rectangle2 {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+};
+</pre>
+
+<p>Тело класса выполнено в <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode" target="_blank">строгом режиме</a>.</p>
+
+<p>Метод <strong>конструктора</strong> - это специальный метод для создания и инициализации объекта, созданного с помощью класса.</p>
+
+<p>Ключевое слово <code>static</code> определяет статический метод для класса. Статические методы являются функциями самого класса и не могут быть вызваны из экземпляра класса с помощью ключевого слова <code>this</code>. Они должны быть вызваны для самого класса - например, <code>Rectangle.area (x, y)</code>.</p>
+
+<h3>Поднятие (Hoisting)</h3>
+
+<p>Важное различие между <strong>объявлениями функций</strong> и <strong>объявлениями классов</strong> заключается в том, что объявления функций <a href="https://developer.mozilla.org/en-US/docs/Glossary/Hoisting" target="_blank">поднимаются</a>, а объявления классов - нет. Что это значит?</p>
+
+<p>Это означает, что вам нужно сначала объявить свой класс, а затем получить к нему доступ.</p>
+
+<figure>
+	<img src="img/coding/obzor-klassov-v-javascript/2.png" alt="Никаких ошибок при использовании класса">
+	<figcaption>Никаких ошибок при использовании класса</figcaption>
+</figure>
+
+
+<p>В противном случае код, подобный следующему, выдаст Uncaught ReferenceError.</p>
+
+<figure>
+	<img src="img/coding/obzor-klassov-v-javascript/3.png" alt="Ошибка при использовании класса">
+	<figcaption>Ошибка при использовании класса</figcaption>
+</figure>
+
+<h3>Подклассы / Наследование</h3>
+
+<p>Ключевое слово <code>extends</code> используется в <em>объявлениях классов</em> или <em>выражениях классов</em> для создания класса как дочернего элемента другого класса.</p>
+
+<figure>
+<pre>
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a noise.`);
+  }
+}
+
+class Dog extends Animal {
+  eat() {
+    console.log('Yummy Yummy!');
+  }
+}
+
+const dogA = new Dog('Milu');
+dogA.speak(); // Milu makes a noise.
+dogA.eat(); // Yummy Yummy!
+</pre>
+<figcaption>класс расширяет класс</figcaption>
+</figure>
+
+<p>Если в подклассе присутствует <code>конструктор</code>, он должен сначала вызвать <code>super&nbsp;()</code> перед использованием <code>this</code>.</p>
+
+<p>Вы также можете расширить с помощью функции:</p>
+
+<figure>
+	<pre>
+function Animal (name) {
+  this.name = name;
+}
+
+Animal.prototype.speak = function () {
+  console.log(`${this.name} makes a noise.`);
+}
+
+class Dog extends Animal {
+  eat() {
+    console.log('Yummy Yummy!');
+  }
+}
+
+const dogA = new Dog('Milu');
+dogA.speak(); // Milu makes a noise.
+dogA.eat(); // Yummy Yummy!
+	</pre>
+	<figcaption>Использование расширяется с функцией</figcaption>
+</figure>
+
+<p>Используйте <code>Object.setPrototypeOf&nbsp;()</code> в случае расширения обычных объектов:</p>
+
+<figure>
+	<pre>
+const Animal = {
+  speak() {
+    console.log(`${this.name} makes a noise.`);
+  }
+};
+
+class Dog {
+  constructor(name) {
+    this.name = name;
+  }
+  eat() {
+    console.log('Yummy Yummy!');
+  }
+}
+
+Object.setPrototypeOf(Dog.prototype, Animal);
+
+const dogA = new Dog('Milu');
+dogA.speak(); // Milu makes a noise.
+dogA.eat(); // Yummy Yummy!
+	</pre>
+	<figcaption>Использование примера object.setPrototypeOf ()</figcaption>
+</figure>
+
+<p>Ключевое слово <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super" target="_blank">super</a></code> используется для вызова соответствующих методов суперкласса. Это одно из преимуществ перед строгим наследованием на основе прототипа без сахара.</p>
+
+<figure>
+<pre>
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a noise.`);
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    super.speak();
+    console.log(`${this.name} bark.`);
+  }
+  eat() {
+    console.log('Yummy Yummy!');
+  }
+}
+
+const dogA = new Dog('Milu');
+dogA.speak(); // Milu makes a noise.
+dogA.eat(); // Yummy Yummy!
+</pre>
+	<figcaption>класс ужинает</figcaption>
+</figure>
+
+<h3>Миксины</h3>
+
+<p>Согласно <a href="https://en.wikipedia.org/wiki/Mixin" target="_blank">википедии</a>.</p>
+
+<blockquote>В объектно-ориентированных языках программирования mixin (или mixin-in) - это класс, который содержит методы для использования другими классами, не будучи родительским классом этих других классов.</blockquote>
+
+<p>Мы создаем объект с общими методами и используем его в качестве шаблона миксина.</p>
+
+<figure>
+	<pre>
+const animalBehavior =  {
+  speak() {
+    console.log(`${this.name} makes a noise.`);
+  },
+   eat() {
+    console.log('Yummy Yummy!');
+  }
+}
+
+class Dog {
+ constructor(name) {
+    this.name = name;
+  }
+}
+
+Object.assign(Dog.prototype, animalBehavior);
+
+const dogA = new Dog('Milu');
+dogA.speak(); // Milu makes a noise.
+dogA.eat(); // Yummy Yummy!
+	</pre>
+	<figcaption>Пример миксина</figcaption>
+</figure>
+
+<p>Используя этот способ, вы также можете выйти из класса и включить миксин вместе.</p>
+
+<figure>
+	<img src="img/coding/obzor-klassov-v-javascript/3.jpg" alt="Использование миксина">
+	<figcaption>Dog расширяет Animal и включает в себя миксин animalBehavior</figcaption>
+</figure>
+<p></p>
+
+<p>Мы также можем применять множество миксинов одновременно, используя <code>класс</code> для миксинов.</p>
+
+<figure>
+	<pre>
+const calculatorMixin = Base => class extends Base {
+  calc() {
+    console.log('calc method');
+  }
+};
+
+const randomizerMixin = Base => class extends Base {
+  randomize() {
+    console.log('randomize method');
+  }
+};
+
+class Foo {
+ doSomething(){
+  console.log('doSomething');
+ }
+}
+
+class Bar extends calculatorMixin(randomizerMixin(Foo)) {
+  constructor(name) {
+   super();
+   this.name = name;
+  }
+
+  logName(){
+    console.log('logName , ', this.name);
+  }
+}
+
+const test = new Bar('nameX');
+test.logName(); // logName ,  nameX
+test.doSomething(); // doSomething
+test.randomize(); // randomize method
+test.calc(); // calc method
+	</pre>
+	<figcaption>Пример наследования 2 миксинов</figcaption>
+</figure>
+
+<h3>Геттеры и сеттеры</h3>
+
+<p>Классы также позволяют использовать геттеры и сеттеры.</p>
+
+<p>Может быть разумно использовать геттеры и сеттеры для ваших свойств, особенно если вы хотите сделать что-то особенное со значением перед их возвратом или перед их установкой.</p>
+
+<p>Чтобы добавить методы получения и установки в класс, используйте ключевые слова <code>get</code> и <code>set</code>.</p>
+
+<p>Пример:</p>
+
+<figure>
+	<pre>
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a noise.`);
+  }
+}
+
+class Dog extends Animal {
+   get dogName() {
+    return `Mr.${this.name}`;
+  }
+  set dogName(name) {
+    this.name = name;
+  }
+  speak() {
+    super.speak();
+    console.log(`${this.name} bark.`);
+  }
+  eat() {
+    console.log('Yummy Yummy!');
+  }
+}
+
+const dogA = new Dog('Milu');
+dogA.dogName; // "Mr.Milu"
+dogA.dogName = 'Subin'; // "Subin"
+dogA.dogName; // "Mr.Subin"
+	</pre>
+	<figcaption>образец сеттера и геттера</figcaption>
+</figure>
+
+<p>Резюме</p>
+
+<p>Использование <code>класса</code> дает нам некоторые преимущества в реализации, такие как более простой синтаксис, меньшая подверженность ошибкам, более легкая настройка иерархий наследования и более простой вызов родительского прототипа с помощью <code>super.method&nbsp;()</code>.</p>
+
+<p>Надеюсь, эта статья вам пригодится! Не стесняйтесь оставлять любые вопросы в комментариях ниже. Я буду рад помочь!</p>
+
+<p>Вы можете посмотреть больше примеров <a href="https://github.com/GoogleChrome/samples/blob/gh-pages/classes-es6/demo.js" target="_blank">здесь</a>.</p>
+
+<p>Главное изображение : <a href="https://unsplash.com/@asthetik?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a></p>
+
+<p class="source">Перевод статьи <a href="https://levelup.gitconnected.com/an-overview-of-classes-in-javascript-1414dda962d1" target="_blank">&laquo;An overview of classes in JavaScript&raquo;</a></p>

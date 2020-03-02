@@ -1,0 +1,53 @@
+<section class="design-graphic">
+	<div class="container">
+		<div class="columns">
+			<div class="column is-9-widescreen is-8-tablet">
+				<div class="columns">
+					<div class="column-is-6">
+						<section class="webdesign">
+							<div class="column">
+								<div class="s-title-wrap">
+									<h2 class="title"><a href="blog/webdesign/">Веб&#8209;дизайн</a></h2>
+									<a href="blog/webdesign/" class="view-all">Посмотреть все</a>
+								</div>
+{% for post in site.categories.webdesign limit: 1 offset: 0 %}
+{% include /home-design-graphic-post-1.html %}
+{% endfor %}
+{% for post in site.categories.webdesign limit: 2 offset: 1 %}
+{% include /home-design-graphic-post-2.html %}
+{% endfor %}
+							</div>
+						</section><!-- /.webdesign -->
+
+					</div>
+					<div class="column-is-6">
+						<section class="graphic">
+							<div class="column">
+
+								<div class="s-title-wrap">
+									<h2 class="title"><a href="blog/graphic/">Графика</a></h2>
+									<a href="blog/graphic/" class="view-all">Посмотреть все</a>
+								</div>
+{% for post in site.categories.graphic limit: 1 offset: 0 %}
+{% include /home-design-graphic-post-1.html %}
+{% endfor %}
+{% for post in site.categories.graphic limit: 2 offset: 1 %}
+{% include /home-design-graphic-post-2.html %}
+{% endfor %}
+							</div>
+						</section><!-- /.graphic -->
+
+					</div>
+				</div>
+
+			</div><!-- /.column-is-8 -->
+			<aside class="column is-3-widescreen is-4-tablet">
+
+				<div class="ad-side">
+{% include /ad-type-side-vert.html %}
+				</div>
+			</aside>
+
+		</div>
+	</div>
+</section><!-- /.design-graphic -->

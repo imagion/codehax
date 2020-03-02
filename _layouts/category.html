@@ -1,0 +1,43 @@
+{% include /header-category.html %}
+{% include /header-top-line.html %}
+
+<main>
+
+	<section class="category-header">
+		<div class="columns">
+			<div class="column">
+				<h1>{{ page.title }}</h1>
+			</div>
+		</div>
+	</section>
+
+	<section class="category-content">
+
+		<div class="container">
+			<div class="columns">
+				<div class="column is-9-widescreen is-8-tablet">
+
+{% for post in paginator.posts %}
+{% include /home-cms-item.html %}
+{% endfor %}
+
+				</div>
+
+{% include /pagination-first.html %}
+
+				<aside class="column is-3-widescreen is-4-tablet">
+
+{% include /category-aside.html %}
+
+				</aside>
+			</div>
+		</div>
+
+	</section><!-- /.category-content -->
+
+{% include /pagination-second.html %}
+
+</main>
+
+
+{% include /footer.html %}
