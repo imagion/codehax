@@ -22,6 +22,7 @@ const quality = 95; // Responsive images quality
 // const imga = series('img_responsive_1x', 'img_responsive_2x')
 
 
+
 const paths = {
 		styles: {
 			src: 'scss/*.scss',
