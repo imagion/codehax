@@ -13,18 +13,18 @@ github_username: jekyll
 # Build settings
 markdown: kramdown
 theme: minima
-plugins:
-  - jekyll-paginate-v2
-pagination:
-  enabled: true
-  per_page: 9
-  title: ':title - Страница :num'
-  limit: 0
-  sort_field: 'date'
-  sort_reverse: true
-  trail:
-    before: 2
-    after: 2
+# plugins:
+#   - jekyll-paginate-v2
+# pagination:
+#   enabled: true
+#   per_page: 9
+#   title: ':title - Страница :num'
+#   limit: 0
+#   sort_field: 'date'
+#   sort_reverse: true
+#   trail:
+#     before: 2
+#     after: 2
 
 exclude:
   - '**/*.DS_Store'
