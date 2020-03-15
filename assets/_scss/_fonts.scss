@@ -1,0 +1,18 @@
+@mixin font($fname, $fstyle, $fweight, $furl) {
+	@font-face {
+		font-family: $fname;
+		font-style: $fstyle;
+		font-weight: $fweight;
+		font-display: swap;
+		src: local($fname), url($furl) format('woff2');
+	}
+}
+
+
+@include font('montserrat', normal, 400, '../fonts/MontserratRegular/MontserratRegular');
+@include font('montserrat', normal, 600, '../fonts/MontserratSemiBold/MontserratSemiBold');
+
+@include font('robotomono', normal, 400, '../fonts/RobotoMonoRegular/RobotoMonoRegular');
+
+@include font('oswald', normal, 600, '../fonts/OswaldDemiBold/OswaldDemiBold');
+@include font('oswald', normal, 700, '../fonts/OswaldBold/OswaldBold');

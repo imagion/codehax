@@ -6,8 +6,9 @@ Gemfile.lock
 
 # Gulp
 package.json
+package-lock.json
 gulpfile.js
-/node_modules/
+node_modules
 
 # Adobe files
 *.pdf

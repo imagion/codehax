@@ -10,21 +10,33 @@ category_dir: 'blog'
 twitter_username: jekyllrb
 github_username: jekyll
 
+# # For GotHub Pages
+# lsi: false
+# safe: tr
+# source: codehax
+# incremental: false
+# highlighter: rouge
+# gist:
+#   noscript: false
+# kramdown:
+#   76th_engine: mathjax
+#   syntax_highlighter: rouge
+
 # Build settings
 markdown: kramdown
 theme: minima
-# plugins:
-#   - jekyll-paginate-v2
-# pagination:
-#   enabled: true
-#   per_page: 9
-#   title: ':title - Страница :num'
-#   limit: 0
-#   sort_field: 'date'
-#   sort_reverse: true
-#   trail:
-#     before: 2
-#     after: 2
+plugins:
+  - jekyll-paginate-v2
+pagination:
+  enabled: true
+  per_page: 9
+  title: ':title - Страница :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  trail:
+    before: 2
+    after: 2
 
 exclude:
   - '**/*.DS_Store'
@@ -37,7 +49,7 @@ exclude:
   - node_modules
   - npm-debug.log
   - package.json
-  - package.lock.json
+  - package-lock.json
   - scss
 
 soc:
@@ -52,7 +64,7 @@ social:
   <a href="#" class="navbar-item zen"><svg xmlns="http://www.w3.org/2000/svg" class="zen_svg" height="24" width="24" viewBox="0 0 640 640" >
   <style type="text/css">
     <![CDATA[
-    .zen_soc { fill:#edf1f2}
+    .zen_soc { fill:#edf1f2 }
     ]]></style>
     <path class="zen_soc" d="M 0,481.93128 V 323.86255 l 7.7499996,0.54658 C 12.0125,324.70975 24.5,325.21093 35.5,325.52288 c 81.5062,2.31142 128.37479,8.07646 162.4089,19.97702 46.37097,16.21434 80.40417,50.24928 96.58623,96.5912 11.84204,33.91302 17.62825,80.9241 19.98958,162.4089 0.30283,10.45 0.79113,22.7125 1.08511,27.25 l 0.53451,8.25 H 158.05217 0 Z M 324.43018,631.75 c 0.29398,-4.5375 0.78228,-16.8 1.08511,-27.25 2.36133,-81.4848 8.14754,-128.49588 19.98958,-162.4089 16.18206,-46.34192 50.21526,-80.37686 96.58623,-96.5912 34.03411,-11.90056 80.9027,-17.6656 162.4089,-19.97702 11,-0.31195 23.4875,-0.81313 27.75,-1.11375 L 640,323.86255 V 481.93128 640 H 481.94783 323.89567 Z M 0,158.06872 V 0 h 158.06872 158.06873 l -0.54658,7.75 c -0.30062,4.2625 -0.8018,16.75 -1.11375,27.75 -1.96675,69.35252 -6.55274,114.10139 -14.98114,146.18203 -16.05285,61.10126 -56.71269,101.7611 -117.81395,117.81395 -32.08064,8.4284 -76.82951,13.01439 -146.18203,14.98114 -11,0.31195 -23.4875,0.81313 -27.7500004,1.11375 L 0,316.13745 Z m 611.5,156.8447 C 515.7065,311.52586 473.96055,306.31756 439.31797,293.43167 388.86413,274.66451 354.81678,236.16003 340.50402,181.68203 332.07562,149.60139 327.48963,104.85252 325.52288,35.5 325.21093,24.5 324.70975,12.0125 324.40913,7.75 L 323.86255,0 H 481.93128 640 v 158 158 l -3.25,-0.15429 c -1.7875,-0.0849 -13.15,-0.50439 -25.25,-0.93229 z"/>
   </svg></a>

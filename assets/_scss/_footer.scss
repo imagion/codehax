@@ -1,0 +1,144 @@
+//========== FOOTER ==========
+
+footer {
+  background: $black-ter;
+
+  .navbar {
+    background: $black-ter;
+  }
+
+  .navbar-start,
+  .navbar-end {
+    flex-direction: column;
+    justify-content: space-between;
+    justify-content: center;
+  }
+
+  .footer-top {
+    border-bottom: 1px solid $grey;
+    padding: $column-gap*2;
+
+    .navbar-start {
+      margin-left: -$column-gap;
+    }
+  }
+
+  .footer-bottom {
+    padding: $column-gap*2;
+
+    .container {
+      justify-content: center;
+      text-align: center;
+    }
+
+    p {
+      color: $grey;
+    }
+
+    .navbar-end {
+      flex-direction: row;
+    }
+  }
+
+  .footer-logo {
+    font-size: 1.5rem;
+    padding: 0 $column-gap $column-gap;
+    color: $grey-lighter;
+  }
+
+  .main-navigation {
+    .navbar-item {
+      color: $grey-lighter;
+      font-size: 1rem;
+    }
+  }
+
+  form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    label {
+      font-weight: 700;
+      color: $grey-lighter;
+      margin-bottom: $column-gap*2;
+      display: block;
+    }
+  }
+
+  .social {
+    .navbar-item {
+      border: 1px solid $grey;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      margin-right: $column-gap;
+      transition: all .3s ease-out;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .icon {
+        color: $white;
+      }
+    }
+  }
+}
+
+.field.has-addons .control {
+  &:not(:last-child) {
+    width: 400px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.social {
+  display: flex;
+
+  .vk:hover {
+    background-color: $vk;
+  }
+
+  .fb:hover {
+    background-color: $facebook;
+  }
+
+  .twit:hover {
+    background-color: $twitter;
+  }
+
+  .teleg {
+    .fa-telegram-plane {
+      width: 1.3rem;
+      height: 1.3rem;
+    }
+
+    &:hover {
+      background-color: $telegram;
+    }
+  }
+
+  .zen:hover {
+    background-color: $white;
+
+    .zen_soc {
+      fill: #000000;
+    }
+  }
+
+  .rss {
+    padding-right: 0.5rem;
+    padding-top: 0.4rem;
+
+    &:hover {
+      background-color: #f26522;
+    }
+  }
+}

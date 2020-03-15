@@ -1,0 +1,427 @@
+//========== PAGE ==========
+
+.page-header {
+  height: 70vh;
+  min-height: 460px;
+  color: $white;
+  position: relative;
+  background-color: $black;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: block;
+
+  &::before {
+    content: '';
+    background-color: $dark;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.55;
+    transition: opacity .25s ease;
+  }
+
+  &-content {
+    position: absolute;
+    width: 100%;
+    bottom: 15%;
+    z-index: 1;
+
+    .post-meta {
+      .post-comments {
+        color: $white;
+      }
+    }
+  }
+
+  .page-category-link {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-bottom: 3px solid $accent;
+  }
+
+  &-meta {
+
+    .page-category-link,
+    .title,
+    .page-date,
+    .page-comments {
+      color: $white;
+    }
+  }
+
+  .title {
+    text-transform: none;
+    font-size: 2rem;
+  }
+}
+
+.comments-wrap {
+  display: flex;
+}
+
+
+//========== CATEGORY ==========
+
+.category-header,
+.about-header {
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
+
+//========== PAGE (ARTICLE) ==========
+.article-content {
+  padding: $column-gap*2 x;
+}
+
+.article-body {
+  > :first-child {
+    margin-top: 0;
+  }
+
+  p,
+  .video,
+  ul,
+  ol,
+  h4,
+  blockquote {
+    margin-top: 2rem;
+  }
+
+  p {
+    &+a {
+      margin-top: 2rem;
+      display: inline-block;
+    }
+  }
+
+  p.source {
+    font-size: .875rem;
+  }
+
+  p,
+  li {
+    font-size: 1.3rem;
+  }
+
+  ul li,
+  ol li {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  ul li {
+    list-style-type: disc;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+    color: $grey;
+
+    &+p {
+      margin-top: 6px;
+    }
+  }
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 3.5rem;
+
+    &+p {
+      margin-top: 6px;
+    }
+
+    a {
+      font-size: inherit;
+      font-weight: inherit;
+    }
+
+    &+a img {
+      margin-top: 1.5rem;
+    }
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+
+    &+p {
+      margin-top: 6px;
+    }
+
+    &+h4 {
+      margin-top: 2rem;
+    }
+
+    &+img {
+      margin-top: 1rem;
+    }
+  }
+
+  figure {
+    margin-top: 3.25rem;
+
+    img {
+      margin: auto;
+    }
+
+    img+img {
+      margin-top: 0.75rem;
+    }
+  }
+
+  .figure-wrap {
+    display: flex;
+
+    img {
+      width: 50%;
+      height: 100%;
+      padding: 5px;
+    }
+  }
+
+  figcaption {
+    line-height: 1.4;
+    margin-top: 10px;
+    text-align: center;
+    color: $grey;
+  }
+
+  blockquote {
+    font-family: $default-font;
+    font-style: italic;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.6;
+    border-left: 3px solid $accent;
+    margin-left: -23px;
+    padding-left: 20px;
+
+    &.pullquote {
+      font-size: 1.875rem;
+      margin-top: 3.4rem;
+      padding-left: 3.125rem;
+      border: none;
+
+      +figure {
+        margin-top: 3.4rem;
+      }
+    }
+
+    em {
+      font-style: normal;
+    }
+  }
+
+  .twitter-tweet {
+    margin: x auto;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    margin-top: 3.25rem;
+  }
+
+  code {
+    background: lighten($grey-lighter, 3%);
+    color: $grey-dark;
+    padding: .125em .25em;
+  }
+
+  pre {
+    padding: 1.25rem;
+    background: lighten($grey-lighter, 3%);
+    color: $grey-dark;
+    margin-top: 2.5rem;
+
+    &+pre {
+      margin-top: 0;
+      padding-top: 4px;
+    }
+  }
+}
+
+
+.video {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0;
+
+  iframe {
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+.breadcrumb {
+  flex-wrap: nowrap;
+
+  ol,
+  ul {
+    flex-wrap: nowrap;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+      background-color: transparent;
+    }
+  }
+
+  li {
+    &.is-active {
+      a {
+        text-decoration: none;
+        color: $grey;
+      }
+    }
+  }
+
+  a {
+    color: $grey-darker;
+    padding: 0 .5em;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+}
+
+.read-more {
+  margin-bottom: $column-gap;
+
+  &-header {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin: $column-gap*1.5 0 $column-gap/2 0;
+  }
+
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  a {
+    line-height: 1.3;
+    display: inline-block;
+    transition: color .25s ease;
+    margin: 8px 0;
+    color: $grey-dark;
+  }
+}
+
+.ad-article {
+  margin: 1rem x;
+}
+
+.likely .likely__widget {
+  padding: 3px 6px;
+  height: inherit;
+  background: $grey-lighter;
+}
+
+.likely-on-page {
+  .likely__widget {
+
+    &_vkontakte,
+    &_odnoklassniki {
+
+      &:active,
+      &:focus,
+      &:hover {
+        background: rgba(211, 218, 227, 0.8);
+      }
+    }
+
+    &_facebook {
+
+      &:active,
+      &:focus,
+      &:hover {
+        background: rgba(207, 212, 229, .8);
+      }
+    }
+
+    &_linkedin {
+
+      &:active,
+      &:focus,
+      &:hover {
+        background: rgba(191, 221, 236, 0.8);
+      }
+    }
+
+    &_twitter {
+
+      &:active,
+      &:focus,
+      &:hover {
+        background: rgba(191, 237, 250, 0.8);
+      }
+    }
+
+    &_odnoklassniki {
+
+      &:active,
+      &:focus,
+      &:hover {
+        background: rgba(252, 227, 206, 0.8);
+      }
+    }
+
+    &_whatsapp {
+
+      &:active,
+      &:focus,
+      &:hover {
+        background: rgba(200, 244, 216, 0.8);
+      }
+    }
+
+    &_telegram {
+
+      &:active,
+      &:focus,
+      &:hover {
+        background: rgba(204, 234, 246, 0.8);
+      }
+    }
+
+    &_pinterest {
+
+      &:active,
+      &:focus,
+      &:hover {
+        background: rgba(238, 193, 198, 0.8);
+      }
+    }
+  }
+}
+
+.article-top-ad {
+  margin: 1.25rem x;
+}

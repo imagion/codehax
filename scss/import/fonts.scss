@@ -1,9 +1,0 @@
-@import "mixins/font-face.scss";
-
-@include font-face("montserrat", "../fonts/MontserratRegular/MontserratRegular",400 , normal);
-@include font-face("montserrat", "../fonts/MontserratSemiBold/MontserratSemiBold", 600);
-
-@include font-face("robotomono", "../fonts/RobotoMonoRegular/RobotoMonoRegular");
-
-@include font-face("oswald", "../fonts/OswaldDemiBold/OswaldDemiBold", 600);
-@include font-face("oswald", "../fonts/OswaldBold/OswaldBold", 700);

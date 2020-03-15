@@ -1,0 +1,86 @@
+//========== DESIGN-GRAPHIC ==========
+
+.webdesign,
+.graphic {
+  padding: 0;
+}
+
+//========== TECHNOLOGY ==========
+
+.technology {
+  .s-title-wrap {
+    padding: x 1.25rem;
+  }
+}
+
+//========== CMS ==========
+
+.pagination-section {
+  padding: $column-gap*2 0;
+  background-color: #f5f5f5;
+
+  &-first {
+    padding: $column-gap 0;
+    background: none;
+    margin-bottom: $column-gap;
+    border-bottom: 1px solid #dfdfdf;
+  }
+
+  .fa-angle-double-right {
+    margin-left: $column-gap*.5;
+  }
+}
+
+.pagination {
+  padding-top: 12px;
+  display: flex;
+  justify-content: center;
+
+  a,
+  span {
+    display: inline-block;
+    margin-top: 5px;
+    width: 42px;
+    height: 42px;
+    line-height: 40px;
+    border: 2px solid $white;
+    border-radius: 10em;
+    font-size: 18px;
+    font-weight: 800;
+    text-decoration: none;
+    color: #666666;
+    transition: border-color .25s ease, color .25s ease;
+  }
+
+  a {
+    &:hover {
+      border-color: $accent;
+      color: $accent;
+    }
+
+    &.pagination-left,
+    &.pagination-right {
+      color: $accent;
+    }
+  }
+
+  span {
+    &.active {
+      border-color: $accent;
+      color: $accent;
+    }
+  }
+
+  .pagination-left,
+  .pagination-right {
+    border: none;
+    font-size: 32px;
+    width: 30px;
+  }
+}
+
+.s-more {
+  a:hover {
+    text-decoration: none;
+  }
+}
