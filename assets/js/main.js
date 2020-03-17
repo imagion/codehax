@@ -45,14 +45,21 @@ $( document ).ready(function() {
 		custom: false
 	});
 
-	//disqusloader
+	// disqusloader
 	$.disqusLoader('.comments', {
-	  scriptUrl: '//codehax.disqus.com/embed.js',
-	  disqusConfig: function() {
-	    this.callbacks.onReady = [function() {
-	      $('.disqus-placeholder').addClass('is-hidden');
-	    }];
-	  }
+		scriptUrl: '//codehax.disqus.com/embed.js',
+		disqusConfig: function() {
+			this.callbacks.onReady = [function() {
+				$('.disqus-placeholder').addClass('is-hidden');
+			}];
+		}
 	});
-
+	
+	// lazyLoad initalize
+	var lazyLoadInstance = new LazyLoad({
+		elements_selector: ".lazy"
+		// ... more custom settings?
+	});
+	lazyLoadInstance.update();
+	
 });

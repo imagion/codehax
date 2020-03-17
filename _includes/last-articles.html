@@ -7,7 +7,7 @@
 		<div class="lb-item">
 			<div class="lb-thumb">
 				{% for post in site.categories.coding limit: 1 offset: 0 %}
-				<a class="lb-item-header" href="{{ post.url }}"><img src="img/{{ post.latest }}" alt="{{ post.title }}"></a>
+				<a class="lb-item-header" href="{{ post.url }}"><img src="assets/img/{{ post.categories }}/{{ post.fold }}/{{ post.latest }}" alt="{{ post.title }}"></a>
 				{% endfor %}
 			</div>
 			<div class="lb-body">

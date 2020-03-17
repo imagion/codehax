@@ -13,19 +13,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Template Basic Images Start -->
-	<meta property="og:image" content="img/{% if page.og %}{{ page.og }}{% else %}{{ site.imagehome }}{% endif %}">
+	<meta property="og:image" content="assets/img/{% if page.og %}{{ post.categories }}/{{ post.fold }}/{{ page.og }}{% else %}{{ site.imagehome }}{% endif %}">
 	{% if layout.post %}
 	<meta property="og:type" content="article" />
 	<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
 	{% endif %}
-	<link rel="icon" href="img/favicon.png">
+	<link rel="icon" href="assets/img/favicon.png">
 	<!-- Template Basic Images End -->
 
 	<!-- Custom Browsers Color Start -->
 	<meta name="theme-color" content="{{ site.themecolor }}">
 	<!-- Custom Browsers Color End -->
 
-	<link rel="stylesheet" href="/css/styles.min.css">
+	<link rel="stylesheet" href="/assets/css/styles.min.css">
 
 </head>
 
