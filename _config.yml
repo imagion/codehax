@@ -4,7 +4,7 @@ email: your-email@example.com
 description: Новости электроники, технологий, современных гаджетов и другая актуальная информация современной IT индустрии
 themecolor: '#202225'
 imagehome: codehax-og.jpg
-baseurl: '' # the subpath of your site, e.g. /blog
+# baseurl: '' # the subpath of your site, e.g. /blog
 url: 'https://codehax.ru'
 category_dir: 'blog'
 twitter_username: jekyllrb
