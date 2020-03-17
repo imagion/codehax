@@ -5,7 +5,7 @@ description: Новости электроники, технологий, сов
 themecolor: '#202225'
 imagehome: codehax-og.jpg
 baseurl: 'codehax.ru' # the subpath of your site, e.g. /blog
-# url: 'https://codehax.ru'
+url: 'https://codehax.ru'
 category_dir: 'blog'
 twitter_username: jekyllrb
 github_username: jekyll
