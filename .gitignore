@@ -49,6 +49,7 @@ node_modules
 *.opus
 
 # Ignore
+.vscode
 *.log
 ._*
 .cache
