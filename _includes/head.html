@@ -5,26 +5,15 @@
 
 	<meta charset="utf-8">
 	<base href="{{ site.baseurl }}">
-
 	<title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 	<meta name="description" content="{{ site.description }}">
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!-- Template Basic Images Start -->
+	<meta name="viewport" content="width=device-width">
 	<meta property="og:image" content="assets/img/{% if page.og %}{{ post.categories }}/{{ post.fold }}/{{ page.og }}{% else %}{{ site.imagehome }}{% endif %}">
 	{% if layout.post %}
 	<meta property="og:type" content="article" />
 	<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
 	{% endif %}
 	<link rel="icon" href="assets/img/favicon.png">
-	<!-- Template Basic Images End -->
-
-	<!-- Custom Browsers Color Start -->
-	<meta name="theme-color" content="{{ site.themecolor }}">
-	<!-- Custom Browsers Color End -->
-
 	<link rel="stylesheet" href="/assets/css/styles.min.css">
 
 </head>
